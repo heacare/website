@@ -11,7 +11,7 @@
   },
   "homepage": "https://github.com/Happily-Ever-After-Corp/website#readme",
   "scripts": {
-    "format": "prettier --write . !resources/_gen"
+    "format": "prettier --write . !resources/_gen !public"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",
