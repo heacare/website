@@ -1,0 +1,9 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'Happily Ever After'
+
+[params]
+  openGraph = true
+  description = 'TODO'
+  images = ['site-feature-image.jpg']
+  title = 'Happily Ever After'
