@@ -7,26 +7,14 @@
 {{ if hugo.IsProduction }}
   {{ $css := resources.Get "css/main.css" }}
   {{ $css = $css | resources.PostCSS | minify | fingerprint | resources.PostProcess }}
-  <link rel="stylesheet" href="{{ $css.Permalink }}" />
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
 {{ else }}
-  <script src="https://cdn.tailwindcss.com?plugins=typography,forms"></script>
-  <script>
-    tailwind.config = {
-      content: ["./{content,layouts}/**/*.{html,css,md}"],
-      theme: {
-        extend: {},
-        fontFamily: {
-          sans: ["Poppins", "sans-serif"],
-          serif: ["Playfair Display", "sans-serif"],
-        },
-      },
-    };
-  </script>
+  {{- partial "tailwind-dev.html" . -}}
 {{ end }}
 <style>
-@media screen and (max-width: 640px) {
-	html {
-		font-size: 85%;
-	}
-}
+  @media screen and (max-width: 640px) {
+    html {
+      font-size: 85%;
+    }
+  }
 </style>
