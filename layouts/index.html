@@ -45,6 +45,7 @@
             placeholder="Enter your email address"
           />
           <input type="hidden" name="{{ .Params.email.key }}" value="" />
+		  <input type="hidden" name="tags" value="{{ .Params.email.tags }}" />
           <button
             class="{{ .Site.Params.style.button }} whitespace-nowrap"
             type="submit"
