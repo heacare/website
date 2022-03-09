@@ -2,8 +2,7 @@
 title: "Happily Ever After"
 date: 2022-03-08T21:11:00+08:00
 hero:
-  title: Helping people live <span class="decoration-rose-400 decoration-4 underline underline-offset-4">healthier lives</span>
-  image: undraw_progress_overview_re_tvcl.svg
+  title: We believe something something <span class="decoration-rose-400 decoration-4 underline underline-offset-4">healthier lives</span>
 email:
   cta: Interested in lorem ipsum dolor?
   submit: Keep in touch

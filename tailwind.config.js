@@ -1,5 +1,6 @@
 module.exports = {
-  content: ["./config.toml", "./{content,layouts}/**/*.{html,css,md}"],
+  //content: ["./config.toml", "./{content,layouts}/**/*.{html,css,md}"],
+  content: ["./public/**/*.{html,css}"],
   theme: {
     extend: {},
     fontFamily: {

@@ -6,8 +6,8 @@
     {{- partial "styles.html" . -}}
   </head>
   <body class="text-gray-800 tracking-wide">
-    {{- partial "header.html" . -}}
+    {{- block "header" . }}{{- end }}
     <div id="content">{{- block "main" . }}{{- end }}</div>
-    {{- partial "footer.html" . -}}
+    {{- block "footer" . }}{{- end }}
   </body>
 </html>
