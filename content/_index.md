@@ -1,6 +1,12 @@
 ---
 title: "Happily Ever After"
 date: 2022-03-08T21:11:00+08:00
+hero:
+  title: Helping people live <span class="decoration-rose-400 decoration-4 underline underline-offset-4">healthier lives</span>
+  image: undraw_progress_overview_re_tvcl.svg
+email:
+  cta: Interested in lorem ipsum dolor?
+  submit: Keep in touch
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque in dictum non consectetur. Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec. Ac turpis egestas maecenas pharetra convallis. Mattis enim ut tellus elementum sagittis. Dignissim enim sit amet venenatis urna cursus eget nunc. Tristique senectus et netus et malesuada fames ac. Varius quam quisque id diam vel quam elementum pulvinar etiam. Orci ac auctor augue mauris augue neque gravida in fermentum. Nulla aliquet porttitor lacus luctus accumsan. Hac habitasse platea dictumst quisque sagittis purus sit amet volutpat. Eget gravida cum sociis natoque penatibus et magnis dis parturient.

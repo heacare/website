@@ -1,10 +1,20 @@
 {{ define "main" }}
-  <header class="bg-red-100">
-	  <div class="{{ .Site.Params.style.container }} py-12 px-12">
-		  <p class="text-4xl md:text-5xl leading-loose md:leading-loose">Catchy line to grab attention</p>
+  <header>
+	  <div class="{{ .Site.Params.style.container }} flex items-center justify-between my-24">
+		  <h1 class="text-3xl sm:text-4xl leading-loose sm:leading-loose max-w-xs sm:max-w-none mr-8">{{ .Params.hero.title | safeHTML }}</h1>
+			  <img class="w-48 sm:w-64" src="{{ .Params.hero.image }}">
 	  </div>
   </header>
-  <main class="{{ .Site.Params.style.container }} prose font-serif text-justify text-xl leading-relaxed py-12 px-12 max-w-2xl">
+  <main class="{{ .Site.Params.style.containerSmall }} my-24 prose font-serif text-justify text-lg leading-relaxed">
     {{ .Content }}
   </main>
+  <section class="bg-rose-200">
+	  <form class="{{ .Site.Params.style.container }} py-24" method="POST" action="">
+		  <h2 class="text-2xl my-4" id="get-involved">{{ .Params.email.cta }}</h2>
+		  <div class="flex justify-end flex-wrap gap-4 my-4">
+		  <input class="{{ .Site.Params.style.inputText }} bg-white flex-1" size="16" type="email" required placeholder="Email address">
+		  <button class="{{ .Site.Params.style.button }} whitespace-nowrap" type="submit">{{ .Params.email.submit }}</button>
+		  </div>
+	  </div>
+  </section>
 {{ end }}
