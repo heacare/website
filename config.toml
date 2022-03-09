@@ -7,3 +7,7 @@ title = 'Happily Ever After'
   description = 'TODO'
   images = ['site-feature-image.jpg']
   title = 'Happily Ever After'
+[params.style]
+  container = 'px-4 mx-auto max-w-4xl'
+[params.navbar]
+  logo = 'logo.png'

@@ -1,3 +1,10 @@
 {{ define "main" }}
-  <div class="">{{ .Content }}</div>
+  <header class="bg-red-100">
+	  <div class="{{ .Site.Params.style.container }} py-12 px-12">
+		  <p class="text-4xl md:text-5xl leading-loose md:leading-loose">Catchy line to grab attention</p>
+	  </div>
+  </header>
+  <main class="{{ .Site.Params.style.container }} prose font-serif text-justify text-xl leading-relaxed py-12 px-12 max-w-2xl">
+    {{ .Content }}
+  </main>
 {{ end }}
