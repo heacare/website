@@ -1,3 +1,25 @@
-{{ $css := resources.Get "css/main.css" }}
-{{ $css = $css | resources.PostCSS | minify | fingerprint | resources.PostProcess }}
-<link rel="stylesheet" href="{{ $css.Permalink }}" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+  rel="stylesheet"
+/>
+{{ if hugo.IsProduction }}
+  {{ $css := resources.Get "css/main.css" }}
+  {{ $css = $css | resources.PostCSS | minify | fingerprint | resources.PostProcess }}
+  <link rel="stylesheet" href="{{ $css.Permalink }}" />
+{{ else }}
+  <script src="https://cdn.tailwindcss.com?plugins=typography,forms"></script>
+  <script>
+    tailwind.config = {
+      content: ["./{content,layouts}/**/*.{html,css,md}"],
+      theme: {
+        extend: {},
+        fontFamily: {
+          sans: ["Poppins", "sans-serif"],
+          serif: ["Playfair Display", "sans-serif"],
+        },
+      },
+    };
+  </script>
+{{ end }}
