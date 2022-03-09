@@ -30,7 +30,7 @@
       "tailwindcss": {},
       "postcss-nested": {},
       "postcss-reuse": {},
-  "autoprefixer": {}
+      "autoprefixer": {}
     }
   },
   "prettier": {
