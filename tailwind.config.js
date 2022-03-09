@@ -5,7 +5,7 @@ module.exports = {
     extend: {},
     fontFamily: {
       sans: ["Poppins", "sans-serif"],
-      serif: ["Playfair Display", "sans-serif"],
+      serif: ["Lora", "sans-serif"],
     },
   },
   plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],

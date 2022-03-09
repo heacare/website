@@ -5,7 +5,7 @@
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
     {{- partial "styles.html" . -}}
   </head>
-  <body class="text-gray-800 tracking-wide">
+  <body class="text-gray-800">
     {{- block "header" . }}{{- end }}
     <div id="content">{{- block "main" . }}{{- end }}</div>
     {{- block "footer" . }}{{- end }}

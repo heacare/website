@@ -2,6 +2,9 @@ baseURL = 'https://hea.care/'
 languageCode = 'en-us'
 title = 'Happily Ever After'
 
+[markup.goldmark.renderer]
+  unsafe = true
+
 [params]
   openGraph = true
   description = 'TODO'
