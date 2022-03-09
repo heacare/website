@@ -1,14 +1,14 @@
 <nav class="{{ .Site.Params.style.container }} flex items-center py-2 sm:py-3">
   <img
     class="block w-16 sm:w-24 -m-2 sm:-m-3"
-    src="{{ .Site.Params.navbar.logo }}"
+    src="{{ .Site.Params.navbar.logo | relURL }}"
   />
   <span class="font-bold text-lg sm:text-2xl tracking-tight ml-2 mr-auto"
     >Happily Ever After</span
   >
   <a
     class="{{ .Site.Params.style.button }} whitespace-nowrap"
-    href="#get-involved"
+    href="{{ "/#get-involved" | relLangURL }}"
     >Get Involved</a
   >
 </nav>

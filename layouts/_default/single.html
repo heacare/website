@@ -1,5 +1,11 @@
+{{ define "header" }}
+  {{- partial "header.html" . -}}
+{{ end }}
 {{ define "main" }}
   <main class="{{ .Site.Params.style.container }} prose">
     {{ .Content }}
   </main>
+{{ end }}
+{{ define "footer" }}
+  {{- partial "footer.html" . -}}
 {{ end }}
