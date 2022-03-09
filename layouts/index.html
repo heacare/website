@@ -1,49 +1,42 @@
 {{ define "main" }}
-  <div class="md:flex">
-    <section class="flex-1">
-      <div class="md:sticky top-0 md:h-screen md:flex flex-col">
-        <div class="flex-1 my-8 sm:mx-10">
-          <div class="flex items-center justify-center my-4">
-            <img
-              class="w-16 sm:w-24 -m-2 sm:-m-3"
-              src="{{ .Site.Params.navbar.logo | relURL }}"
-            />
-            <span class="font-bold text-lg sm:text-2xl tracking-tight ml-2"
-              >Happily Ever After</span
-            >
-          </div>
-          <header class="my-12 sm:my-4 px-6 pl-8">
-            <h1 class="text-3xl leading-loose sm:leading-loose text-center">
-              {{ .Params.hero.title | safeHTML }}
-            </h1>
-          </header>
+  <div class="py-2 sm:py-20 bg-neutral-50">
+    <div class="flex items-center justify-center my-20 px-8">
+      <img
+        class="w-24 -m-3 mix-blend-darken"
+        src="{{ .Site.Params.navbar.logo | relURL }}"
+      />
+      <span class="font-bold text-2xl tracking-tight ml-2"
+        >Happily Ever After</span
+      >
+    </div>
+    <div class="mx-auto max-w-md sm:max-w-xl -rotate-1 py-2">
+      <main
+        class="m-6 p-12 prose text-justify text-xl leading-relaxed bg-white rounded-lg shadow-lg"
+      >
+        {{ .Content }}
+      </main>
+
+      <form
+        class="m-6 p-12 bg-white rounded-lg shadow-lg"
+        method="POST"
+        action=""
+      >
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <input
+            class="{{ .Site.Params.style.inputText }} flex-1"
+            size="8"
+            type="email"
+            required
+            placeholder="Enter your email address"
+          />
+          <button
+            class="{{ .Site.Params.style.button }} whitespace-nowrap"
+            type="submit"
+          >
+            {{ .Params.email.submit }}
+          </button>
         </div>
-        <form class="py-2 px-6 max-w-lg mx-auto" method="POST" action="">
-          <h2 class="text-xl my-4 text-center" id="get-involved">
-            {{ .Params.email.cta }}
-          </h2>
-          <div class="flex justify-end flex-wrap gap-4 my-4">
-            <input
-              class="{{ .Site.Params.style.inputText }} flex-1"
-              size="16"
-              type="email"
-              required
-              placeholder="Email address"
-            />
-            <button
-              class="{{ .Site.Params.style.button }} whitespace-nowrap"
-              type="submit"
-            >
-              {{ .Params.email.submit }}
-            </button>
-          </div>
-        </form>
-      </div>
-    </section>
-    <main
-      class="flex-1 prose font-serif text-justify text-lg leading-relaxed px-12 py-16"
-    >
-      {{ .Content }}
-    </main>
+      </form>
+    </div>
   </div>
 {{ end }}
