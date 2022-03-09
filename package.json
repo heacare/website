@@ -28,9 +28,9 @@
   "postcss": {
     "plugins": {
       "tailwindcss": {},
-      "autoprefixer": {},
-      "psotcss-nested": {},
-      "psotcss-reuse": {}
+      "postcss-nested": {},
+      "postcss-reuse": {},
+  "autoprefixer": {}
     }
   },
   "prettier": {
