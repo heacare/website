@@ -9,29 +9,46 @@
         >Happily Ever After</span
       >
     </div>
-    <div class="mx-auto max-w-md sm:max-w-xl -rotate-1 py-2">
-      <main
-        class="m-6 p-12 prose text-justify text-xl leading-relaxed bg-white rounded-lg shadow-lg"
-      >
-        {{ .Content }}
+    <div class="mx-auto max-w-md sm:max-w-2xl -rotate-1 py-2">
+      <main class="m-6 my-12 bg-white rounded-lg shadow-lg">
+        {{ with .Params.letter.subject }}
+          <h1
+            class="px-12 py-4 text-lg font-bold border-b-2 border-neutural-200"
+          >
+            {{ . }}
+          </h1>
+        {{ end }}
+        <section class="px-12 py-8 prose text-justify text-lg leading-loose">
+          {{ .Content }}
+        </section>
       </main>
 
       <form
-        class="m-6 p-12 bg-white rounded-lg shadow-lg"
+        class="m-6 my-12 bg-white rounded-lg shadow-lg"
         method="POST"
-        action=""
+        action="{{ .Params.email.action }}"
       >
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
+        {{ with .Params.email.cta }}
+          <h1
+            class="px-12 py-4 text-lg font-bold border-b-2 border-neutural-200"
+          >
+            {{ . }}
+          </h1>
+        {{ end }}
+        <div class="px-12 py-8 flex flex-col sm:flex-row justify-center gap-4">
           <input
             class="{{ .Site.Params.style.inputText }} flex-1"
             size="8"
             type="email"
+            name="EMAIL"
             required
             placeholder="Enter your email address"
           />
+          <input type="hidden" name="{{ .Params.email.key }}" value="" />
           <button
             class="{{ .Site.Params.style.button }} whitespace-nowrap"
             type="submit"
+            name="subscribe"
           >
             {{ .Params.email.submit }}
           </button>
