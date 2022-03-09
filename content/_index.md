@@ -8,6 +8,7 @@ email:
   submit: Get notified
   action: https://hey.us14.list-manage.com/subscribe/post?u=1ea7320b68b8fe45c5065d636&amp;id=8834be0439
   key: b_1ea7320b68b8fe45c5065d636_8834be0439
+  tags: 7280051,7280055
 ---
 
 Hello, welcome to Happily Ever After, we're glad you're here!
