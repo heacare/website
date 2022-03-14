@@ -12,7 +12,7 @@ email:
 
 Hello, welcome to Happily Ever After, we're glad you're here!
 
-Healthcare costs and rising everywhere and it almost feels like every new day added to our lifespan, is just a curse of old age, pain, chronic disease and unsurmountable medical fees. We think there is a better way. 
+Healthcare costs and rising everywhere and it almost feels like every new day added to our lifespan, is just a curse of old age, pain, chronic disease and unsurmountable medical fees. We think there is a better way.
 
 Our purpose is to guide your journey to a happier, healthier and longer life. So we put together a team of experts on physical, mental, and social wellbeing who share a vision: adding 10 billion years of healthy life to the planet. We believe that with the right guidance, anyone can thrive in any aspect of their day - from diet, sport routine, sleep habits, and many more.
 
