@@ -35,25 +35,32 @@
             {{ . }}
           </h1>
         {{ end }}
-        <div class="px-12 py-8 flex flex-col sm:flex-row justify-center gap-4">
-          <input
-            class="{{ .Site.Params.style.inputText }} flex-1"
-            size="8"
-            type="email"
-            name="EMAIL"
-            required
-            placeholder="Enter your email address"
-          />
-          <input type="hidden" name="{{ .Params.email.key }}" value="" />
-		  <input type="hidden" name="tags" value="{{ .Params.email.tags }}" />
-          <button
-            class="{{ .Site.Params.style.button }} whitespace-nowrap"
-            type="submit"
-            name="subscribe"
-          >
-            {{ .Params.email.submit }}
-          </button>
-        </div>
+        <section class="px-12 py-2">
+          {{ with .Params.email.details }}
+            <p class="my-6 prose">
+              {{ . }}
+            </p>
+          {{ end }}
+          <div class="my-6 flex flex-col sm:flex-row justify-center gap-4">
+            <input
+              class="{{ .Site.Params.style.inputText }} flex-1"
+              size="8"
+              type="email"
+              name="EMAIL"
+              required
+              placeholder="Enter your email address"
+            />
+            <input type="hidden" name="{{ .Params.email.key }}" value="" />
+            <input type="hidden" name="tags" value="{{ .Params.email.tags }}" />
+            <button
+              class="{{ .Site.Params.style.button }} whitespace-nowrap"
+              type="submit"
+              name="subscribe"
+            >
+              {{ .Params.email.submit }}
+            </button>
+          </div>
+        </section>
       </form>
     </div>
   </div>
