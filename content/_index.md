@@ -2,7 +2,7 @@
 title: "Happily Ever After"
 date: 2022-03-08T21:11:00+08:00
 letter:
-  #subject: Something about our goals
+  #subject: The HEA manifesto
 email:
   cta: Want to participate or know what we're up to?
   submit: Get notified
@@ -10,16 +10,16 @@ email:
   key: b_1ea7320b68b8fe45c5065d636_8834be0439
 ---
 
-Hey everyone!
+Hello, welcome to Happily Ever After, we're glad you're here!
 
-Lorem ipsum dolor sit amet, _consectetur adipiscing elit_, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Scelerisque in dictum non consectetur. Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec. Ac turpis egestas maecenas {{< under >}}pharetra convallis{{</ under >}}.
+Healthcare costs and rising everywhere and it almost feels like every new day added to our lifespan, is just a curse of old age, pain, chronic disease and unsurmountable medical fees. We think there is a better way. 
 
-Mattis enim ut tellus elementum sagittis. Dignissim enim sit amet venenatis urna cursus eget nunc. Tristique senectus et netus et malesuada fames ac. Varius quam quisque id diam vel quam elementum pulvinar etiam. Orci ac auctor augue mauris augue neque gravida in fermentum. Nulla aliquet porttitor lacus luctus accumsan. Hac habitasse platea dictumst quisque sagittis purus sit amet volutpat. Eget gravida cum sociis natoque penatibus et magnis dis parturient.
+Our purpose is to guide your journey to a happier, healthier and longer life. So we put together a team of experts on physical, mental, and social wellbeing who share a vision: adding 10 billion years of healthy life to the planet. We believe that with the right guidance, anyone can thrive in any aspect of their day - from diet, sport routine, sleep habits, and many more.
 
-Viverra ipsum nunc aliquet bibendum enim facilisis. Eu mi bibendum neque egestas congue quisque. Ultrices sagittis orci a scelerisque purus semper.
+Trust us, we know the stress caused by trying to control each and every little part of your lifestyle. With countless apps out there, each offering different and sometimes contradicting advice, it gets overwhelming and often frustrating.
 
-At volutpat diam ut venenatis tellus in metus. Sapien faucibus et molestie ac feugiat sed. Eu lobortis elementum nibh tellus molestie. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. Dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu. Ultrices tincidunt arcu non sodales neque sodales ut etiam sit.
+‘Happily Ever After’ is different. Our philosophy is based on a holistic approach, as we aim to support you through an exciting journey to discover your health potential and live a longer life. As we get to know you, we will develop an integrated, personalised plan around your needs. Throughout your journey, you will also receive constant support from our team and our community, made up of like-minded people who will motivate you and share your progress. Ultimately, our goal is not only to make your life healthier and longer, but also to show you that with health comes happiness and fulfilment. We think we can help transform your mood, your performance, your outlook and ultimately your life.
 
-{{< under >}}Elementum facilisis{{</ under >}} leo vel fringilla est ullamcorper eget. Blandit turpis cursus in hac habitasse platea dictumst quisque sagittis. Scelerisque eu ultrices vitae auctor eu augue ut lectus. Sociis natoque penatibus et magnis. Suspendisse faucibus interdum posuere lorem ipsum dolor sit amet consectetur. Iaculis at erat pellentesque adipiscing. Sagittis aliquam malesuada bibendum arcu vitae.
+Does this sound interesting to you? Be part of our mission and add 10 billion years of healthy life to the planet.
 
 _\- The Happily Ever After Team_
