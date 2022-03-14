@@ -7,8 +7,8 @@ title = 'Happily Ever After'
 
 [params]
   openGraph = true
-  description = 'TODO'
-  images = ['site-feature-image.jpg']
+  description = 'Building a personalised holistic healthcare platform to add 10 billion years of healthy life to the planet '
+  #images = ['site-feature-image.jpg']
   title = 'Happily Ever After'
 [params.style]
   container = 'px-8 mx-auto max-w-3xl'
