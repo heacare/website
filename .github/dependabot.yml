@@ -1,0 +1,13 @@
+version: 2
+enable-beta-ecosystems: true
+updates:
+
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      timezone: Asia/Singapore
+    reviewers:
+      - serverwentdown
+
+# vim: set et ts=2 sw=2:
