@@ -10,10 +10,11 @@ title = 'Happily Ever After'
   description = 'Building a personalised holistic healthcare platform to add 10 billion years of healthy life to the planet '
   #images = ['site-feature-image.jpg']
   title = 'Happily Ever After'
+  email = 'headothealth@gmail.com'
 [params.style]
   container = 'px-8 mx-auto max-w-3xl'
   containerSmall = 'px-16 mx-auto max-w-xl'
-  button = 'px-4 py-2 rounded-lg bg-rose-500 border-2 border-transparent hover:bg-rose-600 outline-none ring-offset-2 focus-visible:ring-rose-600 focus-visible:ring-2 text-white font-semibold'
+  button = 'px-4 py-2 rounded-lg bg-rose-500 border-2 border-transparent hover:bg-rose-600 outline-none ring-offset-2 focus-visible:ring-rose-600 focus-visible:ring-2 text-white no-underline font-semibold'
   inputText = 'px-4 py-2 rounded-lg bg-neutral-200 border-2 border-transparent focus:border-rose-500 focus:ring-0'
 [params.navbar]
   logo = 'images/logo.png'

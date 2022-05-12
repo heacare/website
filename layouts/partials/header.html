@@ -1,14 +1,25 @@
-<nav class="{{ .Site.Params.style.container }} flex items-center py-2 sm:py-3">
+<nav
+  class="{{ .Site.Params.style.container }} flex items-center py-2 sm:py-3 {{ if .Params.hide_navigation }}
+    justify-center
+  {{ end }}"
+>
   <img
     class="block w-16 sm:w-24 -m-2 sm:-m-3"
     src="{{ .Site.Params.navbar.logo | relURL }}"
   />
-  <span class="font-bold text-lg sm:text-2xl tracking-tight ml-2 mr-auto"
+  <span
+    class="font-bold text-lg sm:text-2xl tracking-tight ml-2 {{ if .Params.hide_navigation }}
+    {{ else }}
+      mr-auto
+    {{ end }}"
     >Happily Ever After</span
   >
-  <a
-    class="{{ .Site.Params.style.button }} whitespace-nowrap"
-    href="{{ "/#get-involved" | relLangURL }}"
-    >Get Involved</a
-  >
+  {{ if .Params.hide_navigation }}
+  {{ else }}
+    <a
+      class="{{ .Site.Params.style.button }} whitespace-nowrap"
+      href="{{ "/#get-involved" | relLangURL }}"
+      >Get Involved</a
+    >
+  {{ end }}
 </nav>

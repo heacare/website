@@ -4,6 +4,7 @@
     {{- partial "head.html" . -}}
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
     {{- partial "styles.html" . -}}
+    {{- partial "scripts.html" . -}}
   </head>
   <body class="text-gray-800">
     {{- block "header" . }}{{- end }}
