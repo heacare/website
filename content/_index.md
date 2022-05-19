@@ -4,9 +4,9 @@ date: 2022-03-08T21:11:00+08:00
 letter:
   subject: The HEA Manifesto
 email:
-  cta: Want to participate in our user surveys or just curious?
-  #details: Join our mailing list (we won't send you spam)
-  submit: Join our mailing list
+  cta: Want to see what we're building?
+  #details: Join our mailing list and get early access (we won't send you spam)
+  submit: Get early access
   action: https://hey.us14.list-manage.com/subscribe/post?u=1ea7320b68b8fe45c5065d636&amp;id=8834be0439
   key: b_1ea7320b68b8fe45c5065d636_8834be0439
   tags: 7280051,7280055

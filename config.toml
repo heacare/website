@@ -10,7 +10,7 @@ title = 'Happily Ever After'
   description = 'Building a personalised holistic healthcare platform to add 10 billion years of healthy life to the planet '
   #images = ['site-feature-image.jpg']
   title = 'Happily Ever After'
-  email = 'headothealth@gmail.com'
+  email = 'hello@hea.care'
 [params.style]
   container = 'px-8 mx-auto max-w-3xl'
   containerSmall = 'px-16 mx-auto max-w-xl'
