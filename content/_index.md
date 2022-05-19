@@ -3,6 +3,14 @@ title: Happily Ever After
 date: 2022-03-08T21:11:00+08:00
 letter:
   subject: The HEA Manifesto
+community:
+  cta: Want to get involved in HEA?
+telegram:
+  link: https://t.me/+Lgpz66SLvGBiODc1
+  go: Join our Telegram group
+whitepaper:
+  link: https://aufhaven.notion.site/The-Whitepaper-v0-1-d23119a89058406ab4311cc48086abea
+  go: Read our Whitepaper
 email:
   cta: Want to see what we're building?
   #details: Join our mailing list and get early access (we won't send you spam)

@@ -63,13 +63,43 @@
         </section>
       </form>
 
+      <div class="m-6 my-12 bg-white rounded-lg shadow-lg">
+        {{ with .Params.community.cta }}
+          <h1
+            class="px-12 py-4 text-lg font-bold border-b-2 border-neutural-200"
+          >
+            {{ . }}
+          </h1>
+        {{ end }}
+        <section class="px-12 py-2">
+          <p class="my-6 text-center">
+            {{ with .Params.telegram }}
+              <a
+                class="{{ $.Site.Params.style.button }} whitespace-nowrap my-1"
+                href="{{ .link }}"
+              >
+                {{ .go }}
+              </a>
+            {{ end }}
+            {{ with .Params.whitepaper }}
+              <a
+                class="{{ $.Site.Params.style.button }} whitespace-nowrap my-1"
+                href="{{ .link }}"
+              >
+                {{ .go }}
+              </a>
+            {{ end }}
+          </p>
+        </section>
+      </div>
+
       <div class="m-6 my-12 flex justify-center gap-6">
         {{ range $social := .Site.Params.socials }}
           <a
             class="inline-block leading-none text-gray-700 hover:text-gray-800"
             target="_blank"
             href="{{ .url }}"
-			title="{{ .username }}"
+            title="{{ .username }}"
             >{{ with printf "icons/%s.svg" .icon | resources.Get | resources.Minify }}
               {{ .Content | replaceRE "^<svg" "<svg class=\"h-10 fill-current\"" | safeHTML }}
             {{ end }}</a
