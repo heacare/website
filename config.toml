@@ -11,6 +11,10 @@ title = 'Happily Ever After'
   #images = ['site-feature-image.jpg']
   title = 'Happily Ever After'
   email = 'hello@hea.care'
+  socials = [
+	{ icon = 'twitter', username = 'hea_care', url = 'https://twitter.com/hea_care' },
+	{ icon = 'instagram', username = 'hea.care', url = 'https://www.instagram.com/hea.care/' },
+  ]
 [params.style]
   container = 'px-8 mx-auto max-w-3xl'
   containerSmall = 'px-16 mx-auto max-w-xl'
