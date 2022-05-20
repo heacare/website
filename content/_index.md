@@ -11,13 +11,10 @@ telegram:
 whitepaper:
   link: https://aufhaven.notion.site/The-Whitepaper-v0-1-d23119a89058406ab4311cc48086abea
   go: Read our Whitepaper
-email:
+earlyaccess:
   cta: Want to see what we're building?
-  #details: Join our mailing list and get early access (we won't send you spam)
-  submit: Get early access
-  action: https://hey.us14.list-manage.com/subscribe/post?u=1ea7320b68b8fe45c5065d636&amp;id=8834be0439
-  key: b_1ea7320b68b8fe45c5065d636_8834be0439
-  tags: 7280051,7280055
+  link: https://flourishea.typeform.com/heabetasignup
+  go: Get Early Access!
 ---
 
 Hello, welcome to _Happily Ever After_, we're glad you're here!

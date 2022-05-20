@@ -23,45 +23,21 @@
         </section>
       </main>
 
-      <form
-        class="m-6 my-12 bg-white rounded-lg shadow-lg"
-        method="POST"
-        action="{{ .Params.email.action }}"
-      >
-        {{ with .Params.email.cta }}
+      <div class="m-6 my-12 bg-white rounded-lg shadow-lg flex px-12 py-4 justify-between items-center">
+        {{ with .Params.earlyaccess }}
           <h1
-            class="px-12 py-4 text-lg font-bold border-b-2 border-neutural-200"
+            class="text-lg font-bold"
           >
-            {{ . }}
+            {{ .cta }}
           </h1>
+          <a
+            class="{{ $.Site.Params.style.button }} whitespace-nowrap my-1"
+            href="{{ .link }}"
+          >
+            {{ .go }}
+          </a>
         {{ end }}
-        <section class="px-12 py-2">
-          {{ with .Params.email.details }}
-            <p class="my-6 prose">
-              {{ . }}
-            </p>
-          {{ end }}
-          <div class="my-6 flex flex-col sm:flex-row justify-center gap-4">
-            <input
-              class="{{ .Site.Params.style.inputText }} flex-1"
-              size="8"
-              type="email"
-              name="EMAIL"
-              required
-              placeholder="Enter your email address"
-            />
-            <input type="hidden" name="{{ .Params.email.key }}" value="" />
-            <input type="hidden" name="tags" value="{{ .Params.email.tags }}" />
-            <button
-              class="{{ .Site.Params.style.button }} whitespace-nowrap"
-              type="submit"
-              name="subscribe"
-            >
-              {{ .Params.email.submit }}
-            </button>
-          </div>
-        </section>
-      </form>
+      </div>
 
       <div class="m-6 my-12 bg-white rounded-lg shadow-lg">
         {{ with .Params.community.cta }}
