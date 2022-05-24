@@ -21,12 +21,15 @@
         <section class="px-12 py-8 prose text-justify text-lg leading-loose">
           {{ .Content }}
         </section>
-        <button
+        <!--button
           class="{{ $.Site.Params.style.button }} whitespace-nowrap my-1"
           onclick="connectWallet()"
         >
           Connect Wallet
-        </button>
+        </button-->
+        <section class="flex justify-center px-12 py-8">
+          <div id="connect-wallet"></div>
+        </section>
       </main>
 
       <div class="m-6 my-12 bg-white rounded-lg shadow-lg flex px-12 py-4 justify-between items-center">

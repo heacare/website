@@ -1,5 +1,7 @@
 <script src="https://bundle.run/buffer@6.0.3"></script>
 
-{{ $js := resources.Get "js/main.ts" | js.Build }}<script src="{{ $js.RelPermalink }}" defer></script>
-{{ $js := resources.Get "js/connect-wallet.ts" | js.Build }}<script src="{{ $js.RelPermalink }}" defer></script>
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 
+{{ $js := resources.Get "js/main.ts" | js.Build }}<script src="{{ $js.RelPermalink }}" defer></script>
+{{ $connectButton := resources.Get "js/connect-wallet.jsx" | resources.ExecuteAsTemplate "connect-wallet.js" . | babel }}<script src="{{ $connectButton.RelPermalink }}" defer></script>
