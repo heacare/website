@@ -1,5 +1,5 @@
 function ConnectWallet() {
-  const message = "We need globally accessible preventative healthcare";
+  const message = "We need globally accessible preventative healthcare @hea_care #web3health";
 
   let clicked = async () => {
     if(window.ethereum) {
@@ -15,13 +15,17 @@ function ConnectWallet() {
           method: 'personal_sign',
           params: [msg, from],
         });
+
+        const tweet = message + "\n" + "sig:" + sign;
+        const currentPageUrl = window.location.href;
+        const tweetableText = "https://twitter.com/intent/tweet?" + "text=" + encodeURIComponent(tweet);
+        window.location = tweetableText;
+
       } catch (error) {
         // Probably post some error message
         console.log(error);
         return;
       }
-
-      console.log(sign);
     } else {
         window.location = "https://metamask.io/";
     }
