@@ -22,3 +22,6 @@ title = 'Happily Ever After'
   inputText = 'px-4 py-2 rounded-lg bg-neutral-200 border-2 border-transparent focus:border-rose-500 focus:ring-0'
 [params.navbar]
   logo = 'images/logo.png'
+[security]
+  [security.exec]
+    allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', '^babel$']

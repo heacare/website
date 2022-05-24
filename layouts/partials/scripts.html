@@ -1,1 +1,5 @@
+<script src="https://bundle.run/buffer@6.0.3"></script>
+
 {{ $js := resources.Get "js/main.ts" | js.Build }}<script src="{{ $js.RelPermalink }}" defer></script>
+{{ $js := resources.Get "js/connect-wallet.ts" | js.Build }}<script src="{{ $js.RelPermalink }}" defer></script>
+
