@@ -1,0 +1,10 @@
+<div class="bg-gray-200 my-5">
+<div class="mx-6 flex gap-4">
+{{ with .Get "icon" }}
+<div class="py-1">{{ partial "icon.html" (dict "icon" . "class" "h-5") }}</div>
+{{ end }}
+<div>
+{{ .Inner }}
+</div>
+</div>
+</div>

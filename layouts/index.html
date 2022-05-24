@@ -76,10 +76,7 @@
             target="_blank"
             href="{{ .url }}"
             title="{{ .username }}"
-            >{{ with printf "icons/%s.svg" .icon | resources.Get | resources.Minify }}
-              {{ .Content | replaceRE "^<svg" "<svg class=\"h-10 fill-current\"" | safeHTML }}
-            {{ end }}</a
-          >
+			>{{ partial "icon.html" (dict "icon" .icon "class" "h-10") }}</a>
         {{ end }}
       </div>
     </div>

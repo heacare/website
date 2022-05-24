@@ -12,8 +12,8 @@ title = 'Happily Ever After'
   title = 'Happily Ever After'
   email = 'hello@hea.care'
   socials = [
-	{ icon = 'twitter', username = 'hea_care', url = 'https://twitter.com/hea_care' },
-	{ icon = 'instagram', username = 'hea.care', url = 'https://www.instagram.com/hea.care/' },
+	{ icon = 'brands/twitter', username = 'hea_care', url = 'https://twitter.com/hea_care' },
+	{ icon = 'brands/instagram', username = 'hea.care', url = 'https://www.instagram.com/hea.care/' },
   ]
 [params.style]
   container = 'px-8 mx-auto max-w-3xl'
