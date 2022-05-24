@@ -16,7 +16,8 @@ earlyaccess:
   link: https://flourishea.typeform.com/heabetasignup
   go: Get Early Access!
 ---
-*Reactive healthcare is approaching its limits.*
+
+_Reactive healthcare is approaching its limits._
 
 Advances in technology and public health have boosted life expectancies for people in countries around the world. But as we face an aging population, the reality that boosting lifespan with no regards to healthspan just increases human suffering becomes obvious.
 
