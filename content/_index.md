@@ -2,7 +2,7 @@
 title: Happily Ever After
 date: 2022-03-08T21:11:00+08:00
 letter:
-  subject: The HEA Manifesto
+  subject: The HEA Open Letter
 community:
   cta: Want to get involved in HEA?
 telegram:
@@ -17,16 +17,14 @@ earlyaccess:
   go: Get Early Access!
 ---
 
-Hello, welcome to _Happily Ever After_, we're glad you're here!
+*Reactive healthcare is approaching its limits.*
 
-Healthcare costs are rising everywhere and it almost feels like every new day added to our lifespan, is just a curse of old age, pain, chronic disease and unsurmountable medical fees. We think there is a better way.
+Advances in technology and public health have boosted life expectancies for people in countries around the world. But as we face an aging population, the reality that boosting lifespan with no regards to healthspan just increases human suffering becomes obvious.
 
-Our purpose is to guide your journey to a {{< emphasis >}}happier, healthier and longer life{{</ emphasis >}}. So we put together a team of experts on physical, mental, and social wellbeing who share a vision: adding 10 billion years of healthy life to the planet. We believe that with the right guidance, _anyone_ can thrive in any aspect of their day - from diet, sport routine, sleep habits, and many more.
+The costs of traditional healthcare are unsustainble and the benefits are inequitably distributed to the privileged few. With all this, health data continues to be fragmented between governments and corporations. Preventative healthcare, is known to be more efficient for human longeviety but is a hard problem to solve due to the challenges of population behavioural change and inaccessibility to health data.
 
-Trust us, we know the stress caused by trying to control each and every little part of your lifestyle. With countless apps out there, each offering different and sometimes contradicting advice, it gets overwhelming and often frustrating.
+Web 3 enables incentive mechnisms that create the kind of mass behaviour change and co-ordination that preventative healthcare needs. Web 3 technology stacks honor privacy and allow individuals to own and permission their health data for the benefit of all.
 
-_Happily Ever After_ is different. Our philosophy is based on a holistic approach, as we aim to {{< emphasis >}}support you through an exciting journey to discover your health potential{{</ emphasis >}} and live a longer life. As we get to know you, we will develop an integrated, personalised plan around your needs. Throughout your journey, you will also receive constant support from our team and our community, made up of like-minded people who will motivate you and share your progress. Ultimately, our goal is not only to make your life healthier and longer, but also to show you that with health comes happiness and fulfilment. We think we can help transform your mood, your performance, your outlook and ultimately your life.
-
-Does this sound interesting to you? Be part of our mission and add {{< emphasis >}}10 billion years of healthy life to the planet{{</ emphasis >}}.
+{{< emphasis >}}We deserve accessible preventative healthcare as a public good.{{< /emphasis >}}
 
 _\- The Happily Ever After Team_
