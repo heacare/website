@@ -8,6 +8,7 @@ This is our preliminary privacy policy. If you have any concerns, do reach out t
 {{%/ callout %}}
 
 We collect and process your personal data to provide our app experience and services. The data we collect are
+
 - Contact information such as email
 - User information such as name, gender, height, weight, country, birthday and other information you may provide to us about yourself or your account
 - Sleep data from Apple Health and Google Fit

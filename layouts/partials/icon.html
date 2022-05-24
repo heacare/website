@@ -1,8 +1,8 @@
 {{ $res := printf "icons/%s.svg" .icon | resources.Get }}
 {{ if eq $res nil }}
-{{ $res = printf "https://github.com/FortAwesome/Font-Awesome/raw/6.1.1/svgs/%s.svg" .icon | resources.GetRemote }}
+  {{ $res = printf "https://github.com/FortAwesome/Font-Awesome/raw/6.1.1/svgs/%s.svg" .icon | resources.GetRemote }}
 {{ end }}
 {{ with $res | resources.Minify }}
-{{ $svg := printf "<svg class=\"fill-current %s\"" $.class }}
-{{ .Content | replaceRE "^<svg" $svg | safeHTML }}
+  {{ $svg := printf "<svg class=\"fill-current %s\"" $.class }}
+  {{ .Content | replaceRE "^<svg" $svg | safeHTML }}
 {{ end }}
