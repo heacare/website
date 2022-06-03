@@ -18,7 +18,9 @@
             {{ . }}
           </h1>
         {{ end }}
-        <section class="px-12 py-8 prose text-justify text-lg leading-loose">
+        <section
+          class="px-12 py-8 prose text-justify text-sm sm:text-lg leading-loose"
+        >
           {{ .Content }}
         </section>
         <!--button
@@ -32,11 +34,11 @@
         </section>
       </main>
 
-      <div class="m-6 my-12 bg-white rounded-lg shadow-lg flex px-12 py-4 justify-between items-center">
+      <div
+        class="m-6 my-12 bg-white rounded-lg shadow-lg flex px-12 py-4 justify-between items-center"
+      >
         {{ with .Params.earlyaccess }}
-          <h1
-            class="text-lg font-bold"
-          >
+          <h1 class="text-lg font-bold">
             {{ .cta }}
           </h1>
           <a
@@ -85,9 +87,7 @@
             target="_blank"
             href="{{ .url }}"
             title="{{ .username }}"
-            >{{ with printf "icons/%s.svg" .icon | resources.Get | resources.Minify }}
-              {{ .Content | replaceRE "^<svg" "<svg class=\"h-10 fill-current\"" | safeHTML }}
-            {{ end }}</a
+            >{{ partial "icon.html" (dict "icon" .icon "class" "h-10") }}</a
           >
         {{ end }}
       </div>
