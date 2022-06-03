@@ -1,45 +1,55 @@
 function ConnectWallet() {
-  const message = "We need globally accessible preventative healthcare @hea_care #web3health";
+  const message =
+    "We need globally accessible preventative healthcare @hea_care #web3health";
 
   let clicked = async () => {
-    if(window.ethereum) {
+    if (window.ethereum) {
       try {
-        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+        const accounts = await ethereum.request({
+          method: "eth_requestAccounts",
+        });
         console.log(accounts[0]);
-        if(accounts[0] === null || accounts[0] === undefined) {
-          return
+        if (accounts[0] === null || accounts[0] === undefined) {
+          return;
         }
         const from = accounts[0];
-        const msg = `0x${buffer.Buffer.from(message, 'utf8').toString('hex')}`;
+        const msg = `0x${buffer.Buffer.from(message, "utf8").toString("hex")}`;
         const sign = await ethereum.request({
-          method: 'personal_sign',
+          method: "personal_sign",
           params: [msg, from],
         });
 
         const tweet = message + "\n" + "sig:" + sign;
         const currentPageUrl = window.location.href;
-        const tweetableText = "https://twitter.com/intent/tweet?" + "text=" + encodeURIComponent(tweet);
+        const tweetableText =
+          "https://twitter.com/intent/tweet?" +
+          "text=" +
+          encodeURIComponent(tweet);
         window.location = tweetableText;
-
       } catch (error) {
         // Probably post some error message
         console.log(error);
         return;
       }
     } else {
-        window.location = "https://metamask.io/";
+      window.location = "https://metamask.io/";
     }
-  }
+  };
 
   return (
-    <button class="px-4 py-2 rounded-lg bg-rose-500 border-2 border-transparent hover:bg-rose-600 outline-none ring-offset-2 focus-visible:ring-rose-600 focus-visible:ring-2 text-white no-underline font-semibold inline-block whitespace-nowrap my-1" onClick={() => clicked()}>
-    { (window.ethereum) ? "Sign Open Letter" : "Intall Metamask to sign" } 
+    <button
+      class="px-4 py-2 rounded-lg bg-rose-500 border-2 border-transparent hover:bg-rose-600 outline-none ring-offset-2 focus-visible:ring-rose-600 focus-visible:ring-2 text-white no-underline font-semibold inline-block whitespace-nowrap my-1"
+      onClick={() => clicked()}
+    >
+      {window.ethereum ? "Sign Open Letter" : "Intall Metamask to sign"}
     </button>
   );
 }
 
-ReactDOM.render(React.createElement(ConnectWallet),
-    document.getElementById("connect-wallet"));
+ReactDOM.render(
+  React.createElement(ConnectWallet),
+  document.getElementById("connect-wallet")
+);
 
 /*
 window.connectWallet = async function connectWallet() {
