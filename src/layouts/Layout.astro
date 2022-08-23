@@ -14,6 +14,9 @@ const { title } = Astro.props as Props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+Pro&display=swap">
 	</head>
 	<body>
 		<slot />
@@ -27,7 +30,8 @@ const { title } = Astro.props as Props;
 	}
 
 	html {
-		font-family: system-ui, sans-serif;
+		/* Set up a nice default sans-serif font stack */
+		font-family: "Source Sans Pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	}
 
 	body {
@@ -37,10 +41,12 @@ const { title } = Astro.props as Props;
 
 	:global(h1) {
 		font-size: var(--font-size-xl);
+		font-family: 'DM Serif Display', serif;
 	}
 
 	:global(h2) {
 		font-size: var(--font-size-lg);
+		font-family: 'DM Serif Display', serif;
 	}
 
 	:global(code) {
