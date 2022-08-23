@@ -4,45 +4,21 @@
   "description": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Happily-Ever-After-Corp/website.git"
+    "url": "git+https://github.com/heacare/website.git"
   },
   "bugs": {
-    "url": "https://github.com/Happily-Ever-After-Corp/website/issues"
+    "url": "https://github.com/heacare/website/issues"
   },
-  "homepage": "https://github.com/Happily-Ever-After-Corp/website#readme",
+  "homepage": "https://github.com/heacare/website#readme",
   "scripts": {
-    "format": "prettier --write . !resources/_gen !public"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "format": "echo not implemented",
+    "astro": "astro"
   },
   "devDependencies": {
-    "@tailwindcss/forms": "^0.5.1",
-    "@tailwindcss/typography": "^0.5.2",
-    "autoprefixer": "^10.4.7",
-    "postcss": "^8.4.8",
-    "postcss-cli": "^9.1.0",
-    "postcss-nested": "^5.0.6",
-    "postcss-reuse": "^2.1.9",
-    "prettier": "^2.6.2",
-    "prettier-plugin-go-template": "^0.0.13",
-    "tailwindcss": "^3.0.24"
-  },
-  "postcss": {
-    "plugins": {
-      "tailwindcss": {},
-      "postcss-nested": {},
-      "postcss-reuse": {},
-      "autoprefixer": {}
-    }
-  },
-  "prettier": {
-    "overrides": [
-      {
-        "files": [
-          "*.html"
-        ],
-        "options": {
-          "parser": "go-template"
-        }
-      }
-    ]
+    "astro": "^1.0.7"
   }
 }
