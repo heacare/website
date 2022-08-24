@@ -16,7 +16,7 @@ const { title } = Astro.props as Props;
 		<title>{title}</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+Pro&display=swap">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+Pro:wght@400;700&display=swap">
 	</head>
 	<body>
 		<slot />
@@ -24,29 +24,38 @@ const { title } = Astro.props as Props;
 </html>
 <style>
 	:root {
-		--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-		--font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
-		--font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+		--base-scale: 100%;
+		--font-scale: 1em;
+		--font-scale-lg: 1.5em;
+		--font-scale-xl: 2em;
+	}
+
+	:global(:root) {
+		--breakpoint-lg: 70rem;
 	}
 
 	html {
 		/* Set up a nice default sans-serif font stack */
 		font-family: "Source Sans Pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+		font-size: var(--base-scale);
+		-webkit-font-smoothing: antialiased;
 	}
 
 	body {
 		margin: 0;
-		font-size: var(--font-size-base);
+		font-size: var(--font-scale);
 	}
 
 	:global(h1) {
-		font-size: var(--font-size-xl);
+		font-size: var(--font-scale-xl);
 		font-family: 'DM Serif Display', serif;
+		font-weight: 400;
 	}
 
 	:global(h2) {
-		font-size: var(--font-size-lg);
+		font-size: var(--font-scale-lg);
 		font-family: 'DM Serif Display', serif;
+		font-weight: 400;
 	}
 
 	:global(code) {
