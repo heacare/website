@@ -1,0 +1,33 @@
+---
+const { href } = Astro.props;
+
+let Tag = "button";
+if (href) {
+	Tag = "a";
+}
+---
+
+<Tag href={href}>
+	<slot />
+</Tag>
+
+<style>
+	button, a {
+		/* Reset styles */
+		border: none;
+		background: none;
+		color: white;
+		text-decoration: none;
+		/* Layout */
+		padding: 0.5em 1em;
+		/* Shape */
+		border: 2px solid white;
+		border-radius: 0.75em;
+		/* Text style */
+		font-weight: 600;
+	}
+	button:hover, a:hover {
+		background: white;
+		color: #434343;
+	}
+</style>

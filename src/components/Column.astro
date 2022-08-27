@@ -1,0 +1,15 @@
+<div class="column">
+	<slot />
+</div>
+
+<style>
+	.column {
+		/* Column flex */
+		flex: 1;
+		/* Lines */
+		border-left: var(--row-border);
+	}
+	.column:last-child {
+		border-right: var(--row-border);
+	}
+</style>
