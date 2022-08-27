@@ -1,0 +1,28 @@
+<div class="outer">
+	<div class="inner">
+		<slot />
+	</div>
+</div>
+
+<style>
+	:root {
+		--row-border: 2px solid currentColor;
+	}
+
+	.outer {
+		/* Lines */
+		border-top: var(--row-border);
+		border-bottom: var(--row-border);
+		margin-top: -2px;
+		/* Layout */
+		padding: 0 2rem;
+	}
+
+	.inner {
+		/* Layout */
+		max-width: var(--width-lg);
+		margin: 0 auto;
+		/* Column flex */
+		display: flex;
+	}
+</style>
