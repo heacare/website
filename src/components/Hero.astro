@@ -4,6 +4,8 @@ import Column from './Column.astro';
 import Button from './Button.astro';
 import Navigation from './Navigation.astro';
 import color from '../videos/color.mp4';
+
+const { preheading, heading, description, actions } = Astro.props;
 ---
 
 <div class="wrapper">
@@ -20,37 +22,39 @@ import color from '../videos/color.mp4';
 	</Row>
 	<section>
 		<Row>
-			<Column>
+			<Column padding="0 2rem">
 				<h1>
-					<small>We believe in<br></small>
-					<big>Universal Preventative Healthcare.</big>
+					<small>{preheading}<br></small>
+					<big>{heading}</big>
 				</h1>
 			</Column>
 		</Row>
 		<Row>
-			<Column>
-				<p>A community of people exploring and building tools to live healthier lives</p>
+			<Column padding="0 2rem">
+				<p>{description}</p>
 			</Column>
-			<Column>
+			<Column padding="2rem">
 				<div class="actions">
-					<Button href="/">Read manifesto</Button>
-					<Button href="/">Join Discord</Button>
+					{actions.map(link => (
+						<Button href={link.href} target="_blank">{link.text}</Button>
+					))}
 				</div>
 			</Column>
 		</Row>
 	</section>
+	<Row hideBorderBottom>
+		<Column padding="4rem 2rem" />
+	</Row>
 </div>
 
 <style>
 	.wrapper {
 		/* Allow the background to be absolutely positioned */
 		position: relative;
-		/* Force the hero to cover the whole page */
-		min-height: 100vh;
 		/* Text style */
 		color: white;
 		/* Set a default background color */
-		background: #FF9900;
+		background: var(--color-video);
 		z-index: 10;
 	}
 
@@ -73,41 +77,28 @@ import color from '../videos/color.mp4';
 	}
 
 	h1 {
-		margin: 0;
-		padding: calc(5vh + 5vw) 2rem;
-		font-size: 1em;
+		margin: calc(5vh + 5vw) 0;
+		font-size: inherit;
 	}
 	h1 small {
-		font-size: 1.5em;
+		font-size: var(--font-scale-lg);
 	}
 	h1 big {
-		font-size: 5em;
+		font-size: var(--font-scale-hero);
 		line-height: 1.1;
 	}
 
 	p {
-		/* Layout */
-		margin: 0;
-		padding: 2rem;
 		/* Text style */
-		font-size: 1.5em;
+		font-size: var(--font-scale-lg);
 	}
 
 	.actions {
-		/* Layout */
-		padding: 2rem;
-		/*
-		display: flex;
-		flex-direction: column;
-		height: 100%;
-		justify-content: center;
-		align-items: center;
-		*/
 		/* Text style */
-		font-size: 1.2em;
+		font-size: var(--font-scale-md);
 	}
 	.actions > :global(*) {
 		margin: 0.5rem;
-		display: block;
+		display: inline-block;
 	}
 </style>

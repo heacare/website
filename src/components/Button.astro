@@ -1,27 +1,23 @@
 ---
 const { href } = Astro.props;
-
-let Tag = "button";
-if (href) {
-	Tag = "a";
-}
 ---
 
-<Tag href={href}>
+{href ? (<a href={href}>
 	<slot />
-</Tag>
+</a>) : (<button>
+	<slot />
+</button>)}
 
 <style>
 	button, a {
 		/* Reset styles */
-		border: none;
 		background: none;
 		color: white;
 		text-decoration: none;
 		/* Layout */
 		padding: 0.5em 1em;
 		/* Shape */
-		border: 2px solid white;
+		border: 0.2em solid white;
 		border-radius: 0.75em;
 		/* Text style */
 		font-weight: 600;

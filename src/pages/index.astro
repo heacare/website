@@ -1,10 +1,42 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import ProblemList from '../components/ProblemList.astro';
+import Problem from '../components/Problem.astro';
+
+const actions = [
+	{
+		text: "Read Manifesto",
+		href: "/",
+	},
+	{
+		text: "Join Discord",
+		href: "/",
+	},
+];
 ---
 
 <Layout title="HEA - Adding 10 billion years of healthy life to the planet">
 	<main>
-		<Hero />
+		<Hero
+			preheading="We believe in"
+			heading="Universal Preventive Healthcare."
+			description="A community of people exploring and building tools to live healthier lives"
+			actions={actions}
+		/>
+		<ProblemList>
+			<Problem
+				heading="Healthcare should not be just reactive."
+				content="society ... reactive ... ... bad ... preventive ... suffering ... ... ...."
+			/>
+			<Problem
+				heading="Take back ownership for our personal well-being."
+				content="... put health as a pillar of our life ... responsibility ... ownership ... taking back from big companies."
+			/>
+			<Problem
+				heading="Gain control over our digital health twin."
+				content="Our digital twin ... data ... ... big tech ... cloud ... local ... ... protocols ... decentralisation ...."
+			/>
+		</ProblemList>
 	</main>
 </Layout>
