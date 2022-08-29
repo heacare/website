@@ -1,0 +1,14 @@
+---
+import Row from './Row.astro';
+import Column from './Column.astro';
+---
+
+<section>
+	<Row>
+		<Column padding="2rem" />
+	</Row>
+	<slot />
+	<Row>
+		<Column padding="2rem" />
+	</Row>
+</section>

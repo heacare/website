@@ -1,15 +1,24 @@
+---
+const { padding } = Astro.props;
+---
+
 <div class="column">
 	<slot />
 </div>
 
-<style>
+<style define:vars={{ padding }}>
 	.column {
 		/* Column flex */
 		flex: 1;
+		/* Padding */
+		padding: var(--padding);
 		/* Lines */
-		border-left: var(--row-border);
+		border-bottom: var(--row-border);
+		margin-bottom: calc(0px - var(--row-thickness));
 	}
-	.column:last-child {
+	.column:not(:last-child) {
+		/* Lines */
 		border-right: var(--row-border);
+		margin-right: calc(0px - var(--row-thickness));
 	}
 </style>

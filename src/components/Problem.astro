@@ -1,0 +1,15 @@
+---
+import Row from './Row.astro';
+import Column from './Column.astro';
+
+const { heading, content } = Astro.props;
+---
+
+<Row>
+	<Column padding="0 2rem">
+		<h1>{heading}</h1>
+	</Column>
+	<Column padding="0 2rem">
+		<p>{content}</p>
+	</Column>
+</Row>

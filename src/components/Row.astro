@@ -1,12 +1,27 @@
-<div class="outer">
-	<div class="inner">
+---
+const { hideBorderBottom, flexReverse } = Astro.props;
+
+const outerStyle = {};
+if (hideBorderBottom === true) {
+	outerStyle["borderBottom"] = "none";
+}
+
+const innerClass = {};
+if (flexReverse) {
+	innerClass["inner-reverse"] = true;
+}
+---
+
+<div class="outer" style={outerStyle}>
+	<div class="inner" class={innerClass}>
 		<slot />
 	</div>
 </div>
 
 <style>
 	:root {
-		--row-border: 2px solid currentColor;
+		--row-thickness: 2px;
+		--row-border: var(--row-thickness) solid currentColor;
 	}
 
 	.outer {
@@ -22,7 +37,17 @@
 		/* Layout */
 		max-width: var(--width-lg);
 		margin: 0 auto;
+		border-left: var(--row-border);
+		border-right: var(--row-border);
 		/* Column flex */
 		display: flex;
+	}
+	@media screen and (max-width: 720px) {
+		.inner {
+			flex-direction: column;
+		}
+		.inner.inner-reverse {
+			flex-direction: column-reverse;
+		}
 	}
 </style>
