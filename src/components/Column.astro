@@ -1,8 +1,13 @@
 ---
-const { padding } = Astro.props;
+const { padding, justifyCenter } = Astro.props;
+
+let outerClass = "column";
+if (justifyCenter) {
+	outerClass += " justify-center";
+}
 ---
 
-<div class="column">
+<div class={outerClass}>
 	<slot />
 </div>
 
@@ -20,5 +25,10 @@ const { padding } = Astro.props;
 		/* Lines */
 		border-right: var(--row-border);
 		margin-right: calc(0px - var(--row-thickness));
+	}
+	.column.justify-center {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 </style>

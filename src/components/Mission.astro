@@ -1,0 +1,30 @@
+---
+const { heading } = Astro.props;
+---
+
+<section>
+	<div class="inner">
+		<h1><span>{heading}</span></h1>
+	</div>
+</section>
+
+<style>
+	.inner {
+		/* Layout */
+		max-width: var(--width-md);
+		padding: 1rem 4rem;
+		margin: 0 auto;
+		/* Text style */
+		text-align: center;
+	}
+	
+	h1 {
+		font-size: var(--font-scale-hero);
+		/* Use image as text fill */
+		display: block;
+		background: var(--color-video) url("../images/color.jpg") text no-repeat center center / 70rem;
+		color: transparent;
+		/* Improve visibility */
+		filter: saturate(2.5);
+	}
+</style>

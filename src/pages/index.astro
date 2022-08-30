@@ -3,6 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import ProblemList from '../components/ProblemList.astro';
 import Problem from '../components/Problem.astro';
+import Mission from '../components/Mission.astro';
+import ProjectList from '../components/ProjectList.astro';
+import Project from '../components/Project.astro';
 
 const actions = [
 	{
@@ -38,5 +41,20 @@ const actions = [
 				content="Our digital twin ... data ... ... big tech ... cloud ... local ... ... protocols ... decentralisation ...."
 			/>
 		</ProblemList>
+		<Mission
+			heading="Our mission is to add 10 billion years of healthy life to the planet."
+		/>
+		<ProjectList
+			heading="Projects"
+		>
+			<Project
+				heading="Habitat Health"
+				content="Protocol ..."
+			/>
+			<Project
+				heading="HEA DAO"
+				content="Protocol ..."
+			/>
+		</ProjectList>
 	</main>
 </Layout>
