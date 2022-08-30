@@ -33,7 +33,7 @@ const { preheading, heading, description, actions } = Astro.props;
 			<Column padding="0 2rem">
 				<p>{description}</p>
 			</Column>
-			<Column padding="2rem">
+			<Column padding="1rem 2rem" justifyCenter>
 				<div class="actions">
 					{actions.map(link => (
 						<Button href={link.href} target="_blank">{link.text}</Button>
@@ -77,11 +77,16 @@ const { preheading, heading, description, actions } = Astro.props;
 	}
 
 	h1 {
-		margin: calc(5vh + 5vw) 0;
+		margin: calc(10vh + 5vw) 0;
 		font-size: inherit;
 	}
 	h1 small {
-		font-size: var(--font-scale-lg);
+		font-size: var(--font-scale-xl);
+	}
+	@media screen and (max-width: 480px) {
+		h1 small {
+			font-size: var(--font-scale-lg);
+		}
 	}
 	h1 big {
 		font-size: var(--font-scale-hero);
@@ -90,13 +95,9 @@ const { preheading, heading, description, actions } = Astro.props;
 
 	p {
 		/* Text style */
-		font-size: var(--font-scale-lg);
-	}
-
-	.actions {
-		/* Text style */
 		font-size: var(--font-scale-md);
 	}
+
 	.actions > :global(*) {
 		margin: 0.5rem;
 		display: inline-block;

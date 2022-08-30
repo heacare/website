@@ -1,0 +1,24 @@
+---
+import Row from './Row.astro';
+import Column from './Column.astro';
+
+const { heading } = Astro.props;
+---
+
+<Row>
+	<Column>
+		<div class="background">
+			<h2>{heading}</h2>
+		</div>
+	</Column>
+</Row>
+
+<style>
+	.background {
+		/*
+		background: var(--color-video) url("../images/color.jpg") no-repeat center center / 100vw;
+		color: white;
+		*/
+		padding: 1px 2rem;
+	}
+</style>

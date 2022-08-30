@@ -8,7 +8,10 @@ import Column from './Column.astro';
 		<Column padding="2rem" />
 	</Row>
 	<slot />
-	<Row>
-		<Column padding="2rem" />
-	</Row>
 </section>
+
+<style>
+	section {
+		margin-bottom: 4rem;
+	}
+</style>
