@@ -1,7 +1,8 @@
 ---
-import html from '../images/logo.svg?raw';
+let { height, image } = Astro.props;
+height ??= "1.2em";
 
-const { height } = Astro.props;
+const { default: html } = await import(`../images/${image}.svg?raw`);
 ---
 
 <span set:html={html}></span>
