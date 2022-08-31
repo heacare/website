@@ -1,9 +1,18 @@
 ---
 import Row from './Row.astro';
 import Column from './Column.astro';
+import SvgImage from './SvgImage.astro';
 ---
 
 <section>
+	<div class="background">
+		<span class="background-logo">
+			<SvgImage image="logo" height="32rem" />
+		</span>
+		<span class="background-mark">
+			<SvgImage image="mark" height="24rem" />
+		</span>
+	</div>
 	<Row>
 		<Column padding="2rem" />
 	</Row>
@@ -13,5 +22,33 @@ import Column from './Column.astro';
 <style>
 	section {
 		margin-bottom: 4rem;
+		position: relative;
+	}
+
+	.background {
+		/* Large cover area */
+		position: absolute;
+		top: 0;
+		bottom: -4rem;
+		width: 100%;
+		overflow: hidden;
+		/* Layout */
+		z-index: -10;
+		/* Style */
+		color: rgba(0, 0, 0, 0.05);
+	}
+
+	.background-logo {
+		position: absolute;
+		top: 12rem;
+		left: -16rem;
+			
+		transform: rotate(90deg);
+	}
+
+	.background-mark {
+		position: absolute;
+		bottom: 3rem;
+		right: -16rem;
 	}
 </style>

@@ -3,6 +3,7 @@ import Row from './Row.astro';
 import Column from './Column.astro';
 import Button from './Button.astro';
 import Navigation from './Navigation.astro';
+import SvgImage from './SvgImage.astro';
 import color from '../videos/color.mp4';
 
 const { preheading, heading, description, actions } = Astro.props;
@@ -23,10 +24,15 @@ const { preheading, heading, description, actions } = Astro.props;
 	<section>
 		<Row>
 			<Column padding="0 2rem">
-				<h1>
-					<small>{preheading}<br></small>
-					<big>{heading}</big>
-				</h1>
+				<div class="position-relative">
+					<div class="bottom-right">
+						<SvgImage image="mark" height="1.25rem" />
+					</div>
+					<h1>
+						<small>{preheading}<br></small>
+						<big>{heading}</big>
+					</h1>
+				</div>
 			</Column>
 		</Row>
 		<Row>
@@ -77,7 +83,8 @@ const { preheading, heading, description, actions } = Astro.props;
 	}
 
 	h1 {
-		margin: calc(10vh + 5vw) 0;
+		margin: 0;
+		padding: calc(10vh + 5vw) 0;
 		font-size: inherit;
 	}
 	h1 small {
@@ -90,7 +97,15 @@ const { preheading, heading, description, actions } = Astro.props;
 	}
 	h1 big {
 		font-size: var(--font-scale-hero);
-		line-height: 1.1;
+	}
+	
+	.position-relative {
+		position: relative;
+	}
+	.bottom-right {
+		position: absolute;
+		bottom: 2rem;
+		right: 0rem;
 	}
 
 	p {

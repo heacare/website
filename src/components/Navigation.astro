@@ -1,5 +1,5 @@
 ---
-import Logo from './Logo.astro';
+import SvgImage from './SvgImage.astro';
 
 const links = [
 	{
@@ -14,7 +14,7 @@ const links = [
 ---
 
 <nav>
-	<Logo height="3rem" />
+	<SvgImage image="logo" height="3rem" />
 	<ul>
 		{links.map(link => (
 			<li><a href={link.href} target="_blank">{link.text}</a></li>
