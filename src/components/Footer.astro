@@ -2,14 +2,12 @@
 import SvgImageMasked from './SvgImageMasked.astro';
 import SvgIcon from './SvgIcon.astro';
 
+import { blogLink, twitterLink, instagramLink, discordLink, githubLink } from '../config.ts';
+
 const links = [
 	{
 		text: "Blog",
-		href: "https://mirror.xyz/blog.heacare.eth",
-	},
-	{
-		text: "Twitter",
-		href: "https://twitter.com/hea_care",
+		href: blogLink,
 	},
 ];
 
@@ -17,22 +15,22 @@ const socials = [
 	{
 		text: "Twitter",
 		icon: "twitter",
-		href: "https://twitter.com/hea_care",
+		href: twitterLink,
 	},
 	{
 		text: "Instagram",
 		icon: "instagram",
-		href: "https://www.instagram.com/hea_care",
+		href: instagramLink,
 	},
 	{
 		text: "Discord",
 		icon: "discord",
-		href: "",
+		href: discordLink,
 	},
 	{
 		text: "GitHub",
 		icon: "github",
-		href: "https://github.com/heacare",
+		href: githubLink,
 	},
 ];
 ---
