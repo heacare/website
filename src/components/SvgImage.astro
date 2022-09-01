@@ -1,13 +1,14 @@
 ---
-let { height, image } = Astro.props;
-height ??= "1.2em";
+let { height, scale, image } = Astro.props;
+height ??= "1.5em";
+scale ??= "1";
 
 const { default: html } = await import(`../images/${image}.svg?raw`);
 ---
 
 <span set:html={html}></span>
 
-<style define:vars={{ height }}>
+<style define:vars={{ height, scale }}>
 	span {
 		/* Set height based on prop */
 		height: var(--height);
@@ -19,7 +20,7 @@ const { default: html } = await import(`../images/${image}.svg?raw`);
 		height: 100%;
 		width: auto;
 		/* Crop whitespace with CSS instead of source SVG so source SVG can retain safe area */
-		transform: scale(1.3);
+		transform: scale(var(--scale));
 		/* Use currentColor as fill */
 		fill: currentColor;
 	}
