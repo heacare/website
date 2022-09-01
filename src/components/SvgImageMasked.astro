@@ -1,0 +1,64 @@
+---
+import color from '../videos/color.mp4';
+
+let { height, scale, image } = Astro.props;
+height ??= "1.5em";
+scale ??= "1";
+
+let classname = "";
+
+const { default: imageUrl } = await import(`../images/${image}.svg`);
+const imageMask = `url(${imageUrl})`;
+---
+
+<span class={classname}>
+	<video class="background" muted autoplay loop playsinline>
+		<source src={color} type="video/mp4">
+	</video>
+	<img src={imageUrl} />
+</span>
+
+<style define:vars={{ height, imageMask }}>
+	span {
+		/* Set height based on prop */
+		height: var(--height);
+		display: inline-block;
+		/* Create a positioning scopeg */
+		position: relative;
+		/* Crop whitespace with CSS instead of source SVG so source SVG can retain safe area */
+		transform: scale(var(--scale));
+		/* Set mask */
+		mask: var(--imageMask) no-repeat center center / contain;
+		/* Set background */
+		background: var(--color-video);
+		/* Overflow */
+		overflow: hidden;
+	}
+
+	span img {
+		height: 100%;
+		width: auto;
+		opacity: 0;
+	}
+
+	.background {
+		/* Position the background behind the content and navigation */
+		position: absolute;
+		top: -100%;
+		left: -50%;
+		width: 200%;
+		height: 200%;
+		/* Scale the background to cover instead of fitting */
+		object-fit: cover;
+		filter: brightness(0.95);
+	}
+
+	/*
+	span:not(:hover) {
+		background: currentColor;
+	}
+	span:not(:hover) .background {
+		opacity: 0;
+	}
+	*/
+</style>

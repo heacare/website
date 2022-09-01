@@ -10,7 +10,7 @@ import SvgImage from './SvgImage.astro';
 			<SvgImage image="logo" height="32rem" />
 		</span>
 		<span class="background-mark">
-			<SvgImage image="mark" height="24rem" />
+			<SvgImage image="mark" height="28rem" />
 		</span>
 	</div>
 	<Row>
@@ -22,6 +22,7 @@ import SvgImage from './SvgImage.astro';
 <style>
 	section {
 		margin-bottom: 4rem;
+		/* Create a positioning scope */
 		position: relative;
 	}
 
@@ -40,15 +41,15 @@ import SvgImage from './SvgImage.astro';
 
 	.background-logo {
 		position: absolute;
-		top: 12rem;
-		left: -16rem;
+		top: 6rem;
+		left: -18rem;
 			
 		transform: rotate(90deg);
 	}
 
 	.background-mark {
 		position: absolute;
-		bottom: 3rem;
-		right: -16rem;
+		bottom: 1rem;
+		right: -14rem;
 	}
 </style>

@@ -26,7 +26,7 @@ const { preheading, heading, description, actions } = Astro.props;
 			<Column padding="0 2rem">
 				<div class="position-relative">
 					<div class="bottom-right">
-						<SvgImage image="mark" height="1.25rem" />
+						<SvgImage image="mark" height="1.5em" />
 					</div>
 					<h1>
 						<small>{preheading}<br></small>
@@ -55,7 +55,7 @@ const { preheading, heading, description, actions } = Astro.props;
 
 <style>
 	.wrapper {
-		/* Allow the background to be absolutely positioned */
+		/* Create a positioning scope for the background */
 		position: relative;
 		/* Text style */
 		color: white;
@@ -100,6 +100,7 @@ const { preheading, heading, description, actions } = Astro.props;
 	}
 	
 	.position-relative {
+		/* Create a positioning scope */
 		position: relative;
 	}
 	.bottom-right {

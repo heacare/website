@@ -1,5 +1,5 @@
 ---
-import SvgImage from './SvgImage.astro';
+import SvgImageMasked from './SvgImageMasked.astro';
 import SvgIcon from './SvgIcon.astro';
 
 const links = [
@@ -40,7 +40,9 @@ const socials = [
 <div class="outer">
 	<div class="inner">
 		<div class="main">
-			<SvgImage image="logo" height="4rem" />
+			<span class="logo-gradient">
+				<SvgImageMasked image="logo" height="4rem" hoverAnimation />
+			</span>
 		</div>
 		<div class="links">
 			<h4>Discover</h4>
