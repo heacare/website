@@ -8,14 +8,16 @@ import ProjectList from '../components/ProjectList.astro';
 import Project from '../components/Project.astro';
 import Footer from '../components/Footer.astro';
 
+import { manifestoLink, discordLink } from "../config.ts";
+
 const actions = [
 	{
 		text: "Read Manifesto",
-		href: "/",
+		href: manifestoLink,
 	},
 	{
 		text: "Join Discord",
-		href: "/",
+		href: discordLink,
 	},
 ];
 ---
