@@ -6,6 +6,7 @@ import Problem from '../components/Problem.astro';
 import Mission from '../components/Mission.astro';
 import ProjectList from '../components/ProjectList.astro';
 import Project from '../components/Project.astro';
+import Footer from '../components/Footer.astro';
 
 const actions = [
 	{
@@ -51,13 +52,14 @@ const actions = [
 			heading="Projects"
 		>
 			<Project
+				icon="analytics-regular"
 				heading="Habitat Health"
-				content="Protocol ..."
-			/>
-			<Project
-				heading="HEA DAO"
-				content="Protocol ..."
-			/>
+				subheading="Protocol for an open, composable health data network"
+			>
+				<p>A civilization’s ability to solve critical challenges to progress, such as avoiding pandemics and solving aging, is positively correlated to information availability. Unfortunately, today, health data is created, controlled and stored by opaque organizations such as governments and large enterprises.</p>
+				<p>Habitat Health is a peer-to-peer data system, that enables an open, composable yet private health data network. With Habitat Health, we believe we can make health data a collaborative, positive-sum system for all participants.</p>
+			</Project>
 		</ProjectList>
+		<Footer />
 	</main>
 </Layout>
