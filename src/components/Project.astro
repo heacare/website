@@ -1,24 +1,31 @@
 ---
 import Row from './Row.astro';
 import Column from './Column.astro';
+import SvgIcon from './SvgIcon.astro';
 
-const { heading } = Astro.props;
+const { icon, heading, subheading } = Astro.props;
 ---
 
 <Row>
 	<Column>
-		<div class="background">
-			<h2>{heading}</h2>
+		<div class="inner">
+			<span class="top-right">
+				<SvgIcon icon={icon} />
+			</span>
+			<h1>{heading}</h1>
+			<h4>{subheading}</h4>
+			<slot />
 		</div>
 	</Column>
 </Row>
 
 <style>
-	.background {
-		/*
-		background: var(--color-video) url("../images/color.jpg") no-repeat center center / 100vw;
-		color: white;
-		*/
-		padding: 1px 2rem;
+	.inner {
+		padding: 0 2rem;
+		margin: 2rem 0;
+	}
+
+	.top-right {
+		float: right;
 	}
 </style>
