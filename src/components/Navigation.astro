@@ -1,7 +1,8 @@
 ---
 import SvgImage from './SvgImage.astro';
+import SvgIcon from './SvgIcon.astro';
 
-import { blogLink, twitterLink } from '../config.ts';
+import { blogLink, twitterLink, discordLink } from '../config.ts';
 
 const links = [
 	{
@@ -9,18 +10,31 @@ const links = [
 		href: blogLink,
 	},
 	{
-		text: "Twitter",
+		icon: "twitter",
 		href: twitterLink,
+	},
+	{
+		icon: "discord",
+		href: discordLink,
 	},
 ];
 ---
 
 <nav>
-	<SvgImage image="logo" height="3em" scale="1.3" />
+	<a href="/">
+		<SvgImage image="logo" height="3em" scale="1.3" />
+	</a>
 	<ul>
-		{links.map(link => (
-			<li><a href={link.href} target="_blank">{link.text}</a></li>
-		))}
+		{links.map(link => {
+			if (link.icon) {
+				return (
+					<li><a href={link.href} target="_blank"><SvgIcon icon={link.icon} height="1.3em" /></a></li>
+				);
+			}
+			return (
+				<li><a href={link.href} target="_blank">{link.text}</a></li>
+			);
+		})}
 	</ul>
 </nav>
 
@@ -37,6 +51,8 @@ const links = [
 		align-items: center;
 		justify-content: space-between;
 		gap: var(--gap);
+		/* Ensure navigation icons don't have extra space */
+		line-height: 1;
 	}
 
 	ul {
@@ -46,27 +62,29 @@ const links = [
 		padding: 0;
 		/* Layout */
 		display: flex;
+		align-items: center;
 		gap: var(--gap);
 	}
 
 	a {
-		/* Layout */
-		display: block;
-		/* Shape */
-		border-radius: 0.75em;
 		/* Text style */
 		color: inherit;
 		text-decoration: none;
 		text-transform: uppercase;
 		font-weight: 600;
-		/* Transitions */
-		transition: 0.5s filter;
+	}
+
+	li a {
+		/* Layout */
+		display: block;
+		/* Shape */
+		border-radius: 0.75em;
 		/* Increase click target */
 		padding: calc(var(--gap) / 2);
 		margin: calc(var(--gap) / -2);
 	}
 
-	a:hover {
+	li a:hover {
 		color: #434343;
 		background: white;
 	}
