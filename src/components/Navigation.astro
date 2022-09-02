@@ -2,12 +2,16 @@
 import SvgImage from './SvgImage.astro';
 import SvgIcon from './SvgIcon.astro';
 
-import { blogLink, twitterLink, discordLink } from '../config.ts';
+import { blogLink, wikiLink, twitterLink, discordLink } from '../config.ts';
 
 const links = [
 	{
 		text: "Blog",
 		href: blogLink,
+	},
+	{
+		text: "Wiki",
+		href: wikiLink,
 	},
 	{
 		icon: "twitter",
@@ -28,7 +32,7 @@ const links = [
 		{links.map(link => {
 			if (link.icon) {
 				return (
-					<li><a href={link.href} target="_blank"><SvgIcon icon={link.icon} height="1.3em" /></a></li>
+					<li><a href={link.href} target="_blank"><SvgIcon icon={link.icon} height="1.2em" /></a></li>
 				);
 			}
 			return (
@@ -53,6 +57,11 @@ const links = [
 		gap: var(--gap);
 		/* Ensure navigation icons don't have extra space */
 		line-height: 1;
+	}
+	@media screen and (max-width: 420px) {
+		nav {
+			font-size: 0.8em;
+		}
 	}
 
 	ul {
