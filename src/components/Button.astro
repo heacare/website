@@ -1,8 +1,8 @@
 ---
-const { href } = Astro.props;
+const { href, target } = Astro.props;
 ---
 
-{href ? (<a href={href}>
+{href ? (<a href={href} target={target}>
 	<slot />
 </a>) : (<button>
 	<slot />
