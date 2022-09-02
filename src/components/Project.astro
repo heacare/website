@@ -1,9 +1,10 @@
 ---
 import Row from './Row.astro';
 import Column from './Column.astro';
+import Button from './Button.astro';
 import SvgIcon from './SvgIcon.astro';
 
-const { icon, anchor, heading, subheading } = Astro.props;
+const { icon, anchor, heading, subheading, github } = Astro.props;
 ---
 
 <Row>
@@ -15,6 +16,9 @@ const { icon, anchor, heading, subheading } = Astro.props;
 			<h1><a id={anchor}></a>{heading}</h1>
 			<h4>{subheading}</h4>
 			<slot />
+			<p>
+				<Button href={github} target="_blank">GitHub &#10140;</Button>
+			</p>
 		</div>
 	</Column>
 </Row>
