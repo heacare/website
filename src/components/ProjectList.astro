@@ -2,13 +2,13 @@
 import Row from './Row.astro';
 import Column from './Column.astro';
 
-const { heading } = Astro.props;
+const { anchor, heading } = Astro.props;
 ---
 
 <section>
 	<div class="heading-outer">
 		<div class="heading-inner">
-			<h3>{heading}</h3>
+			<h3><a id={anchor}></a>{heading}</h3>
 		</div>
 	</div>
 	<slot />

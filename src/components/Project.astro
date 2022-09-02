@@ -3,7 +3,7 @@ import Row from './Row.astro';
 import Column from './Column.astro';
 import SvgIcon from './SvgIcon.astro';
 
-const { icon, heading, subheading } = Astro.props;
+const { icon, anchor, heading, subheading } = Astro.props;
 ---
 
 <Row>
@@ -12,7 +12,7 @@ const { icon, heading, subheading } = Astro.props;
 			<span class="top-right">
 				<SvgIcon icon={icon} height="1.5em" />
 			</span>
-			<h1>{heading}</h1>
+			<h1><a id={anchor}></a>{heading}</h1>
 			<h4>{subheading}</h4>
 			<slot />
 		</div>

@@ -3,7 +3,7 @@ import Row from './Row.astro';
 import Column from './Column.astro';
 import SvgIcon from './SvgIcon.astro';
 
-const { heading, content, icon } = Astro.props;
+const { heading, icon } = Astro.props;
 ---
 
 <Row>
@@ -12,7 +12,9 @@ const { heading, content, icon } = Astro.props;
 		<h1>{heading}</h1>
 	</Column>
 	<Column padding="0 2rem" justifyCenter>
-		<p>{content}</p>
+		<div class="content">
+			<slot />
+		</div>
 	</Column>
 </Row>
 
@@ -21,7 +23,7 @@ const { heading, content, icon } = Astro.props;
 		margin: 1rem 0 0;
 	}
 
-	p {
+	.content {
 		font-size: var(--font-scale-md);
 	}
 </style>
