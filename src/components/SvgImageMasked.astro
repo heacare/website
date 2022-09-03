@@ -18,7 +18,7 @@ const imageMask = `url(${imageUrl})`;
 	<img src={imageUrl} />
 </span>
 
-<style define:vars={{ height, imageMask }}>
+<style define:vars={{ height, scale, imageMask }}>
 	span {
 		/* Set height based on prop */
 		height: var(--height);
@@ -29,6 +29,7 @@ const imageMask = `url(${imageUrl})`;
 		transform: scale(var(--scale));
 		/* Set mask */
 		mask: var(--imageMask) no-repeat center center / contain;
+		-webkit-mask: var(--imageMask) no-repeat center center / contain;
 		/* Set background */
 		background: var(--color-video);
 		/* Overflow */

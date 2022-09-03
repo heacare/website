@@ -2,7 +2,7 @@
 import SvgImageMasked from './SvgImageMasked.astro';
 import SvgIcon from './SvgIcon.astro';
 
-import { blogLink, wikiLink, twitterLink, instagramLink, discordLink, githubLink } from '../config.ts';
+import { blogLink, wikiLink, newsletterLink, twitterLink, instagramLink, discordLink, githubLink } from '../config.ts';
 
 const links = [
 	{
@@ -12,6 +12,10 @@ const links = [
 	{
 		text: "Wiki",
 		href: wikiLink,
+	},
+	{
+		text: "Newsletter",
+		href: newsletterLink,
 	},
 ];
 
@@ -43,7 +47,8 @@ const socials = [
 	<div class="inner">
 		<div class="main">
 			<span class="logo-gradient">
-				<SvgImageMasked image="logo" height="4rem" hoverAnimation />
+				<SvgImageMasked image="logo" height="4rem" scale="1.2" hoverAnimation />
+				<p>For any enquiries, reach out to <a href="mailto:hello@hea.care">hello@hea.care</a></p>
 			</span>
 		</div>
 		<div class="links">
@@ -58,7 +63,7 @@ const socials = [
 			<div class="socials-buttons">
 			{socials.map(social => (
 				<a href={social.href} target="_blank" title={social.text}>
-					<SvgIcon icon={social.icon} />
+					<SvgIcon icon={social.icon} height="1.7em" />
 				</a>
 			))}
 			</div>
@@ -77,6 +82,8 @@ const socials = [
 	.outer {
 		/* Layout */
 		padding: 0 1rem;
+		/* Scale */
+		font-size: 0.9em;
 	}
 	
 	.inner {
@@ -133,6 +140,10 @@ const socials = [
 	}
 
 	h4 {
+		margin: 0.5em 0;
+	}
+
+	p {
 		margin: 0.5em 0;
 	}
 
