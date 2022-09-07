@@ -39,10 +39,10 @@ const { preheading, heading, description, actions } = Astro.props;
 			<Column padding="0 2rem" justifyCenter>
 				<p>{description}</p>
 			</Column>
-			<Column padding="1rem 2rem" justifyCenter>
+			<Column padding="2rem" justifyCenter>
 				<div class="actions">
 					{actions.map(link => (
-						<Button href={link.href} target="_blank">{link.text}</Button>
+						<Button href={link.href} target="_blank">{link.text} &#10140;</Button>
 					))}
 				</div>
 			</Column>
@@ -118,8 +118,9 @@ const { preheading, heading, description, actions } = Astro.props;
 		font-size: var(--font-scale-md);
 	}
 
-	.actions > :global(*) {
-		margin: 0.5rem;
-		display: inline-block;
+	.actions {
+		display: flex;
+		gap: 1rem;
+		flex-flow: wrap;
 	}
 </style>
