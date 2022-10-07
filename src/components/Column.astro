@@ -3,32 +3,32 @@ const { padding, justifyCenter } = Astro.props;
 
 let outerClass = "column";
 if (justifyCenter) {
-	outerClass += " justify-center";
+  outerClass += " justify-center";
 }
 ---
 
 <div class={outerClass}>
-	<slot />
+  <slot />
 </div>
 
 <style define:vars={{ padding }}>
-	.column {
-		/* Column flex */
-		flex: 1;
-		/* Padding */
-		padding: var(--padding);
-		/* Lines */
-		border-bottom: var(--row-border);
-		margin-bottom: calc(0px - var(--row-thickness));
-	}
-	.column:not(:last-child) {
-		/* Lines */
-		border-right: var(--row-border);
-		margin-right: calc(0px - var(--row-thickness));
-	}
-	.column.justify-center {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
+  .column {
+    /* Column flex */
+    flex: 1;
+    /* Padding */
+    padding: var(--padding);
+    /* Lines */
+    border-bottom: var(--row-border);
+    margin-bottom: calc(0px - var(--row-thickness));
+  }
+  .column:not(:last-child) {
+    /* Lines */
+    border-right: var(--row-border);
+    margin-right: calc(0px - var(--row-thickness));
+  }
+  .column.justify-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 </style>

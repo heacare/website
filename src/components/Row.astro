@@ -3,46 +3,46 @@ const { hideBorderBottom, flexReverse } = Astro.props;
 
 const outerStyle = {};
 if (hideBorderBottom === true) {
-	outerStyle["borderBottom"] = "none";
+  outerStyle["borderBottom"] = "none";
 }
 
 let innerClass = "";
 if (flexReverse) {
-	innerClass += " inner-reverse";
+  innerClass += " inner-reverse";
 }
 ---
 
 <div class="outer" style={outerStyle}>
-	<div class="inner" class={innerClass}>
-		<slot />
-	</div>
+  <div class="inner" class={innerClass}>
+    <slot />
+  </div>
 </div>
 
 <style>
-	.outer {
-		/* Lines */
-		border-top: var(--row-border);
-		border-bottom: var(--row-border);
-		margin-top: -2px;
-		/* Layout */
-		padding: 0 2rem;
-	}
+  .outer {
+    /* Lines */
+    border-top: var(--row-border);
+    border-bottom: var(--row-border);
+    margin-top: -2px;
+    /* Layout */
+    padding: 0 2rem;
+  }
 
-	.inner {
-		/* Layout */
-		max-width: var(--width-lg);
-		margin: 0 auto;
-		border-left: var(--row-border);
-		border-right: var(--row-border);
-		/* Column flex */
-		display: flex;
-	}
-	@media screen and (max-width: 720px) {
-		.inner {
-			flex-direction: column;
-		}
-		.inner.inner-reverse {
-			flex-direction: column-reverse;
-		}
-	}
+  .inner {
+    /* Layout */
+    max-width: var(--width-lg);
+    margin: 0 auto;
+    border-left: var(--row-border);
+    border-right: var(--row-border);
+    /* Column flex */
+    display: flex;
+  }
+  @media screen and (max-width: 720px) {
+    .inner {
+      flex-direction: column;
+    }
+    .inner.inner-reverse {
+      flex-direction: column-reverse;
+    }
+  }
 </style>

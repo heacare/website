@@ -1,29 +1,29 @@
 ---
-import Row from './Row.astro';
-import Column from './Column.astro';
-import SvgIcon from './SvgIcon.astro';
+import Row from "./Row.astro";
+import Column from "./Column.astro";
+import SvgIcon from "./SvgIcon.astro";
 
 const { heading, icon } = Astro.props;
 ---
 
 <Row>
-	<Column padding="6rem 6rem 6rem 2rem">
-		<SvgIcon icon={icon} height="3em" />
-		<h1>{heading}</h1>
-	</Column>
-	<Column padding="0 2rem" justifyCenter>
-		<div class="content">
-			<slot />
-		</div>
-	</Column>
+  <Column padding="6rem 6rem 6rem 2rem">
+    <SvgIcon icon={icon} height="3em" />
+    <h1>{heading}</h1>
+  </Column>
+  <Column padding="0 2rem" justifyCenter>
+    <div class="content">
+      <slot />
+    </div>
+  </Column>
 </Row>
 
 <style>
-	h1 {
-		margin: 1rem 0 0;
-	}
+  h1 {
+    margin: 1rem 0 0;
+  }
 
-	.content {
-		font-size: var(--font-scale-md);
-	}
+  .content {
+    font-size: var(--font-scale-md);
+  }
 </style>

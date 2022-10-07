@@ -2,28 +2,36 @@
 const { href, target } = Astro.props;
 ---
 
-{href ? (<a href={href} target={target}>
-	<slot />
-</a>) : (<button>
-	<slot />
-</button>)}
+{
+  href ? (
+    <a href={href} target={target}>
+      <slot />
+    </a>
+  ) : (
+    <button>
+      <slot />
+    </button>
+  )
+}
 
 <style>
-	button, a {
-		display: inline-block;
-		/* Reset styles */
-		background: none;
-		color: var(--color-content);
-		text-decoration: none;
-		/* Layout */
-		padding: 0.5em 1em;
-		/* Shape */
-		border: 0.2em solid var(--color-content);
-		border-radius: 0.75em;
-		/* Text style */
-		font-weight: 600;
-	}
-	button:hover, a:hover {
-		background: var(--color-content-subtle);
-	}
+  button,
+  a {
+    display: inline-block;
+    /* Reset styles */
+    background: none;
+    color: var(--color-content);
+    text-decoration: none;
+    /* Layout */
+    padding: 0.5em 1em;
+    /* Shape */
+    border: 0.2em solid var(--color-content);
+    border-radius: 0.75em;
+    /* Text style */
+    font-weight: 600;
+  }
+  button:hover,
+  a:hover {
+    background: var(--color-content-subtle);
+  }
 </style>

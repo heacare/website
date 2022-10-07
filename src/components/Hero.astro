@@ -1,126 +1,130 @@
 ---
-import Row from './Row.astro';
-import Column from './Column.astro';
-import Button from './Button.astro';
-import Navigation from './Navigation.astro';
-import SvgImage from './SvgImage.astro';
-import color from '../videos/color.mp4';
+import Row from "./Row.astro";
+import Column from "./Column.astro";
+import Button from "./Button.astro";
+import Navigation from "./Navigation.astro";
+import SvgImage from "./SvgImage.astro";
+import color from "../videos/color.mp4";
 
 const { preheading, heading, description, actions } = Astro.props;
 ---
 
 <div class="wrapper">
-	<video class="background" muted autoplay loop playsinline>
-		<source src={color} type="video/mp4">
-	</video>
+  <video class="background" muted autoplay loop playsinline>
+    <source src={color} type="video/mp4" />
+  </video>
 
-	<Row>
-		<Column>
-			<div class="navigation">
-				<Navigation />
-			</div>
-		</Column>
-	</Row>
-	<section>
-		<Row>
-			<Column padding="0 2rem">
-				<div class="position-relative">
-					<div class="bottom-right">
-						<SvgImage image="mark" height="1.5em" />
-					</div>
-					<h1>
-						<small>{preheading}<br></small>
-						<big>{heading}</big>
-					</h1>
-				</div>
-			</Column>
-		</Row>
-		<Row>
-			<Column padding="0 2rem" justifyCenter>
-				<p>{description}</p>
-			</Column>
-			<Column padding="2rem" justifyCenter>
-				<div class="actions">
-					{actions.map(link => (
-						<Button href={link.href} target="_blank">{link.text} &#10140;</Button>
-					))}
-				</div>
-			</Column>
-		</Row>
-	</section>
-	<Row hideBorderBottom>
-		<Column padding="4rem 2rem" />
-	</Row>
+  <Row>
+    <Column>
+      <div class="navigation">
+        <Navigation />
+      </div>
+    </Column>
+  </Row>
+  <section>
+    <Row>
+      <Column padding="0 2rem">
+        <div class="position-relative">
+          <div class="bottom-right">
+            <SvgImage image="mark" height="1.5em" />
+          </div>
+          <h1>
+            <small>{preheading}<br /></small>
+            <big>{heading}</big>
+          </h1>
+        </div>
+      </Column>
+    </Row>
+    <Row>
+      <Column padding="0 2rem" justifyCenter>
+        <p>{description}</p>
+      </Column>
+      <Column padding="2rem" justifyCenter>
+        <div class="actions">
+          {
+            actions.map((link) => (
+              <Button href={link.href} target="_blank">
+                {link.text} &#10140;
+              </Button>
+            ))
+          }
+        </div>
+      </Column>
+    </Row>
+  </section>
+  <Row hideBorderBottom>
+    <Column padding="4rem 2rem" />
+  </Row>
 </div>
 
 <style>
-	.wrapper {
-		--color-content: white;
-		--color-content-subtle: rgba(255, 255, 255, 0.2);
-		--color-inverse: var(--color-darkgray);
+  .wrapper {
+    --color-content: white;
+    --color-content-subtle: rgba(255, 255, 255, 0.2);
+    --color-inverse: var(--color-darkgray);
 
-		/* Create a positioning scope for the background */
-		position: relative;
-		/* Text style */
-		color: white;
-		/* Set a default background color */
-		background: var(--color-video);
-		z-index: 10;
-	}
+    /* Create a positioning scope for the background */
+    position: relative;
+    /* Text style */
+    color: white;
+    /* Set a default background color */
+    background: var(--color-video);
+    z-index: 10;
+  }
 
-	.background {
-		/* Position the background behind the content and navigation */
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -10;
-		/* Scale the background to cover instead of fitting */
-		object-fit: cover;
-		filter: brightness(0.95);
-	}
+  .background {
+    /* Position the background behind the content and navigation */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    /* Scale the background to cover instead of fitting */
+    object-fit: cover;
+    filter: brightness(0.95);
+  }
 
-	.navigation {
-		/* Layout */
-		padding: 0rem 2rem;
-	}
+  .navigation {
+    /* Layout */
+    padding: 0rem 2rem;
+  }
 
-	h1 {
-		margin: 0;
-		padding: calc(10vh + 5vw) 0;
-		font-size: inherit;
-	}
-	h1 small {
-		font-size: var(--font-scale-xl);
-	}
-	@media screen and (max-width: 480px) {
-		h1 small {
-			font-size: var(--font-scale-lg);
-		}
-	}
-	h1 big {
-		font-size: var(--font-scale-hero);
-	}
-	
-	.position-relative {
-		/* Create a positioning scope */
-		position: relative;
-	}
-	.bottom-right {
-		position: absolute;
-		bottom: 2rem;
-		right: 0rem;
-	}
+  h1 {
+    margin: 0;
+    padding: calc(10vh + 5vw) 0;
+    font-size: inherit;
+  }
+  h1 small {
+    font-size: var(--font-scale-xl);
+  }
+  @media screen and (max-width: 480px) {
+    h1 small {
+      font-size: var(--font-scale-lg);
+    }
+  }
+  h1 big {
+    font-size: var(--font-scale-hero);
+  }
 
-	p {
-		/* Text style */
-		font-size: var(--font-scale-md);
-	}
+  .position-relative {
+    /* Create a positioning scope */
+    position: relative;
+  }
+  .bottom-right {
+    position: absolute;
+    bottom: 2rem;
+    right: 0rem;
+  }
 
-	.actions {
-		display: flex;
-		gap: 1rem;
-		flex-flow: wrap;
-	}
+  p {
+    /* Text style */
+    font-size: var(--font-scale-md);
+  }
+
+  .actions {
+    display: flex;
+    gap: 1rem;
+    flex-flow: wrap;
+  }
 </style>
