@@ -1,0 +1,14 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Onboarding from "../components/onboarding/Onboarding.tsx";
+import { ChakraProvider } from "@chakra-ui/react";
+---
+
+<Layout
+  pageTitle="HEA - Get started"
+  title="Get started"
+  description=""
+  image="social-media-cover"
+>
+  <Onboarding client:load />
+</Layout>

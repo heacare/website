@@ -5,6 +5,7 @@ export const githubLink = "https://github.com/heacare";
 export const blogLink = "https://mirror.xyz/blog.heacare.eth";
 export const wikiLink = "https://heacare.notion.site";
 export const newsletterLink = "https://heacare.substack.com";
-export const manifestoLink = "https://mirror.xyz/blog.heacare.eth/4zJjwIysK6jJKCQdAiou9kHB_GuZ8W0gHMAouZVB2uE";
+export const manifestoLink =
+  "https://mirror.xyz/blog.heacare.eth/4zJjwIysK6jJKCQdAiou9kHB_GuZ8W0gHMAouZVB2uE";
 
 export const siteName = "Happily Ever After";

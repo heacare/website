@@ -1,181 +1,203 @@
 ---
-import SvgImageMasked from './SvgImageMasked.astro';
-import SvgIcon from './SvgIcon.astro';
+import SvgImageMasked from "./SvgImageMasked.astro";
+import SvgIcon from "./SvgIcon.astro";
 
-import { blogLink, wikiLink, newsletterLink, twitterLink, instagramLink, discordLink, githubLink } from '../config.ts';
+import {
+  blogLink,
+  wikiLink,
+  newsletterLink,
+  twitterLink,
+  instagramLink,
+  discordLink,
+  githubLink,
+} from "../config.ts";
 
 const links = [
-	{
-		text: "Blog",
-		href: blogLink,
-	},
-	{
-		text: "Wiki",
-		href: wikiLink,
-	},
-	{
-		text: "Newsletter",
-		href: newsletterLink,
-	},
+  {
+    text: "Blog",
+    href: blogLink,
+  },
+  {
+    text: "Wiki",
+    href: wikiLink,
+  },
+  {
+    text: "Newsletter",
+    href: newsletterLink,
+  },
 ];
 
 const socials = [
-	{
-		text: "Twitter",
-		icon: "twitter",
-		href: twitterLink,
-	},
-	{
-		text: "Instagram",
-		icon: "instagram",
-		href: instagramLink,
-	},
-	{
-		text: "Discord",
-		icon: "discord",
-		href: discordLink,
-	},
-	{
-		text: "GitHub",
-		icon: "github",
-		href: githubLink,
-	},
+  {
+    text: "Twitter",
+    icon: "twitter",
+    href: twitterLink,
+  },
+  {
+    text: "Instagram",
+    icon: "instagram",
+    href: instagramLink,
+  },
+  {
+    text: "Discord",
+    icon: "discord",
+    href: discordLink,
+  },
+  {
+    text: "GitHub",
+    icon: "github",
+    href: githubLink,
+  },
 ];
 ---
 
 <div class="outer">
-	<div class="inner">
-		<div class="main">
-			<span class="logo-gradient">
-				<SvgImageMasked image="logo" height="4rem" scale="1.2" hoverAnimation />
-				<p>For any enquiries, reach out to <a href="mailto:hello@hea.care">hello@hea.care</a></p>
-			</span>
-		</div>
-		<div class="links">
-			<h4>Discover</h4>
-			<ul>
-				{links.map(link => (
-					<li><a href={link.href} target="_blank">{link.text}</a></li>
-				))}
-			</ul>
-		</div>
-		<div class="socials">
-			<div class="socials-buttons">
-			{socials.map(social => (
-				<a href={social.href} target="_blank" title={social.text}>
-					<SvgIcon icon={social.icon} height="1.7em" />
-				</a>
-			))}
-			</div>
-		</div>
-		<div class="empty1"></div>
-		<div class="empty2"></div>
-		<div class="empty3"></div>
-	</div>
+  <div class="inner">
+    <div class="main">
+      <span class="logo-gradient">
+        <SvgImageMasked image="logo" height="4rem" scale="1.2" hoverAnimation />
+        <p>
+          For any enquiries, reach out to <a href="mailto:hello@hea.care"
+            >hello@hea.care</a
+          >
+        </p>
+      </span>
+    </div>
+    <div class="links">
+      <h4>Discover</h4>
+      <ul>
+        {
+          links.map((link) => (
+            <li>
+              <a href={link.href} target="_blank">
+                {link.text}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="socials">
+      <div class="socials-buttons">
+        {
+          socials.map((social) => (
+            <a href={social.href} target="_blank" title={social.text}>
+              <SvgIcon icon={social.icon} height="1.7em" />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+    <div class="empty1"></div>
+    <div class="empty2"></div>
+    <div class="empty3"></div>
+  </div>
 </div>
 
 <style>
-	a {
-		color: inherit;
-	}
+  a {
+    color: inherit;
+  }
 
-	.outer {
-		/* Layout */
-		padding: 0 1rem;
-		/* Scale */
-		font-size: 0.9em;
-	}
-	
-	.inner {
-		/* Lines */
-		max-width: var(--width-lg);
-		margin: 1rem auto;
-		border: var(--row-border);
-		/* Grid */
-		display: grid;
-		grid-template-rows: 1fr 2fr 3fr;
-		grid-template-columns: 4fr 3fr 2fr 1fr;
-		grid-template-areas:
-			"main empty1 empty1  empty1"
-			"main links  empty2  empty3"
-			"main links  socials socials";
-		/* Borders */
-		grid-gap: var(--row-thickness);
-		background: currentColor;
-	}
-	@media screen and (max-width: 720px) {
-		.inner {
-			grid-template-rows: 1fr 1fr 1fr;
-			grid-template-columns: 5fr 1fr 4fr 1fr;
-			grid-template-areas:
-				"main links  links  empty1"
-				"main links  links  empty2"
-				"main empty3 socials socials";
-		}
-	}
-	@media screen and (max-width: 480px) {
-		.inner {
-			grid-template-rows: auto auto;
-			grid-template-columns: auto auto;
-			grid-template-areas:
-				"main main"
-				"links socials";
-		}
-		.empty1, .empty2, .empty3 {
-			display: none;
-		}
-	}
-	.inner > * {
-		background: white;
-	}
+  .outer {
+    /* Layout */
+    padding: 0 1rem;
+    /* Scale */
+    font-size: 0.9em;
+  }
 
-	.main {
-		grid-area: main;
-		padding: 2rem;
-	}
+  .inner {
+    /* Lines */
+    max-width: var(--width-lg);
+    margin: 1rem auto;
+    border: var(--row-border);
+    /* Grid */
+    display: grid;
+    grid-template-rows: 1fr 2fr 3fr;
+    grid-template-columns: 4fr 3fr 2fr 1fr;
+    grid-template-areas:
+      "main empty1 empty1  empty1"
+      "main links  empty2  empty3"
+      "main links  socials socials";
+    /* Borders */
+    grid-gap: var(--row-thickness);
+    background: currentColor;
+  }
+  @media screen and (max-width: 720px) {
+    .inner {
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-columns: 5fr 1fr 4fr 1fr;
+      grid-template-areas:
+        "main links  links  empty1"
+        "main links  links  empty2"
+        "main empty3 socials socials";
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .inner {
+      grid-template-rows: auto auto;
+      grid-template-columns: auto auto;
+      grid-template-areas:
+        "main main"
+        "links socials";
+    }
+    .empty1,
+    .empty2,
+    .empty3 {
+      display: none;
+    }
+  }
+  .inner > * {
+    background: white;
+  }
 
-	.links {
-		grid-area: links;
-		padding: 1rem;
-	}
+  .main {
+    grid-area: main;
+    padding: 2rem;
+  }
 
-	h4 {
-		margin: 0.5em 0;
-	}
+  .links {
+    grid-area: links;
+    padding: 1rem;
+  }
 
-	p {
-		margin: 0.5em 0;
-	}
+  h4 {
+    margin: 0.5em 0;
+  }
 
-	ul {
-		/* Reset */
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	}
+  p {
+    margin: 0.5em 0;
+  }
 
-	li {
-		margin: 0.5em 0;
-	}
+  ul {
+    /* Reset */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
-	.socials {
-		grid-area: socials;
-		padding: 1rem;
-	}
-	
-	.socials-buttons a {
-		display: inline-block;
-		text-decoration: none;
-		margin: 0.5em;
-	}
+  li {
+    margin: 0.5em 0;
+  }
 
-	.empty1 {
-		grid-area: empty1;
-	}
-	.empty2 {
-		grid-area: empty2;
-	}
-	.empty3 {
-		grid-area: empty3;
-	}
+  .socials {
+    grid-area: socials;
+    padding: 1rem;
+  }
+
+  .socials-buttons a {
+    display: inline-block;
+    text-decoration: none;
+    margin: 0.5em;
+  }
+
+  .empty1 {
+    grid-area: empty1;
+  }
+  .empty2 {
+    grid-area: empty2;
+  }
+  .empty3 {
+    grid-area: empty3;
+  }
 </style>

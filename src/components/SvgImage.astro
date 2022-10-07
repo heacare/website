@@ -9,19 +9,19 @@ const { default: html } = await import(`../images/${image}.svg?raw`);
 <span set:html={html}></span>
 
 <style define:vars={{ height, scale }}>
-	span {
-		/* Set height based on prop */
-		height: var(--height);
-		display: inline-block;
-	}
+  span {
+    /* Set height based on prop */
+    height: var(--height);
+    display: inline-block;
+  }
 
-	span :global(svg) {
-		/* Styles cannot be added directly to the imported SVG. Instead, the SVG is wrapped in a height-bounding element and the SVG is scaled to the parent */
-		height: 100%;
-		width: auto;
-		/* Crop whitespace with CSS instead of source SVG so source SVG can retain safe area */
-		transform: scale(var(--scale));
-		/* Use currentColor as fill */
-		fill: currentColor;
-	}
+  span :global(svg) {
+    /* Styles cannot be added directly to the imported SVG. Instead, the SVG is wrapped in a height-bounding element and the SVG is scaled to the parent */
+    height: 100%;
+    width: auto;
+    /* Crop whitespace with CSS instead of source SVG so source SVG can retain safe area */
+    transform: scale(var(--scale));
+    /* Use currentColor as fill */
+    fill: currentColor;
+  }
 </style>
