@@ -1,10 +1,10 @@
 ---
-const { heading } = Astro.props;
+const { anchor, heading } = Astro.props;
 ---
 
 <section>
   <div class="inner">
-    <h1><span>{heading}</span></h1>
+    <h1><a id={anchor}></a><span>{heading}</span></h1>
   </div>
 </section>
 

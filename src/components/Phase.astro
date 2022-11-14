@@ -1,0 +1,54 @@
+---
+import Row from "./Row.astro";
+import Column from "./Column.astro";
+import SvgIcon from "./SvgIcon.astro";
+
+const { icon, counter, heading, subheading } = Astro.props;
+---
+
+<Row>
+  <Column padding="1rem 2rem" collapsedPadding="1rem 1rem">
+    <div class="inner">
+      <h1 class="counter">{counter}</h1>
+      <div class="details">
+        <h1>
+          <SvgIcon icon={icon} height="0.9em" margin="1rem 0" />
+          {heading}
+        </h1>
+        <p>{subheading}</p>
+      </div>
+    </div>
+  </Column>
+</Row>
+
+<style>
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .counter {
+    font-size: 5em;
+    margin-right: 6rem;
+  }
+  @media screen and (max-width: 720px) {
+    .counter {
+      margin-right: 4rem;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .counter {
+      margin-right: 2rem;
+    }
+  }
+
+  .details {
+    flex-basis: 24rem;
+  }
+
+  h1,
+  p {
+    margin: 1rem 0;
+  }
+</style>

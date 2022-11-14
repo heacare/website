@@ -1,5 +1,5 @@
 ---
-let { height, icon } = Astro.props;
+let { height, margin, icon } = Astro.props;
 height ??= "1.5em";
 
 const { default: html } = await import(`../images/icons/${icon}.svg?raw`);
@@ -7,10 +7,11 @@ const { default: html } = await import(`../images/icons/${icon}.svg?raw`);
 
 <span set:html={html}></span>
 
-<style define:vars={{ height }}>
+<style define:vars={{ height, margin }}>
   span {
     /* Set height based on prop */
     height: var(--height);
+    margin: var(--margin);
     display: inline-block;
     vertical-align: middle;
   }

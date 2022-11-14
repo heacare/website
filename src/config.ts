@@ -7,5 +7,9 @@ export const wikiLink = "https://heacare.notion.site";
 export const newsletterLink = "https://heacare.substack.com";
 export const manifestoLink =
   "https://mirror.xyz/blog.heacare.eth/4zJjwIysK6jJKCQdAiou9kHB_GuZ8W0gHMAouZVB2uE";
+export const gettingStartedLink =
+  "https://heacare.notion.site/Getting-Started-Guide-56db52964ff04cc98ea309a64c4b7723";
+export const productWaitlistLink =
+  "https://flourishea.typeform.com/to/JHPvq3mi";
 
 export const siteName = "Happily Ever After";

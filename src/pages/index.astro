@@ -6,18 +6,16 @@ import Problem from "../components/Problem.astro";
 import Mission from "../components/Mission.astro";
 import ProjectList from "../components/ProjectList.astro";
 import Project from "../components/Project.astro";
+import PhaseList from "../components/PhaseList.astro";
+import Phase from "../components/Phase.astro";
 import Footer from "../components/Footer.astro";
 
-import { manifestoLink, discordLink } from "../config.ts";
+import { gettingStartedLink, manifestoLink } from "../config.ts";
 
 const actions = [
   {
-    text: "Read manifesto",
-    href: manifestoLink,
-  },
-  {
-    text: "Join Discord",
-    href: discordLink,
+    text: "Join us",
+    href: gettingStartedLink,
   },
 ];
 ---
@@ -25,14 +23,14 @@ const actions = [
 <Layout
   pageTitle="HEA - Adding 10 billion years of healthy life to the planet"
   title="Adding 10 billion years of healthy life to the planet"
-  description="Happily Ever After is a community with a single purpose: to help people live longer, healthier and happier lives."
+  description="Happily Ever After is building a preventive healthcare system that is open, borderless, human-centered and collectively-owned."
   image="social-media-cover"
 >
   <main>
     <Hero
       preheading="We believe in"
       heading="Universal Preventive Healthcare."
-      description="Happily Ever After is a community with a single purpose: to help people live longer, healthier and happier lives."
+      description="Happily Ever After is building a preventive healthcare system that is open, borderless, human-centered and collectively-owned."
       actions={actions}
     />
     <ProblemList>
@@ -51,6 +49,7 @@ const actions = [
         </p>
       </Problem>
       <Problem
+        reverse
         icon="hand-holding-heart-regular"
         heading="Healthcare is about humans, not technology."
       >
@@ -79,8 +78,10 @@ const actions = [
       </Problem>
     </ProblemList>
     <Mission
+      anchor="mission"
       heading="Our mission is to add 10 billion years of healthy life to the planet."
     />
+    <!--
     <ProjectList heading="Projects" anchor="projects">
       <Project
         icon="analytics-regular"
@@ -105,6 +106,27 @@ const actions = [
         </p>
       </Project>
     </ProjectList>
+	-->
+    <PhaseList anchor="roadmap" heading="Roadmap">
+      <Phase
+        icon="handshake-alt-regular"
+        counter="1"
+        heading="Gather interest"
+        subheading="Build a community (and DAO) interested in building wellness to the world"
+      />
+      <Phase
+        icon="hammer-regular"
+        counter="2"
+        heading="Build projects"
+        subheading="Incubate and ship community-driven preventive wellness projects"
+      />
+      <Phase
+        icon="globe-regular"
+        counter="3"
+        heading="Scale beyond"
+        subheading="Bring our projects to the rest of the world"
+      />
+    </PhaseList>
     <Footer />
   </main>
 </Layout>
