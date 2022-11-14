@@ -7,11 +7,16 @@ const { heading, icon } = Astro.props;
 ---
 
 <Row>
-  <Column padding="6rem 6rem 6rem 2rem">
-    <SvgIcon icon={icon} height="3em" />
+  <Column padding="6rem 4rem 6rem 2rem" collapsedPadding="6rem 4rem 1rem 2rem">
+    <SvgIcon icon={icon} height="3em" margin="1rem 0" />
     <h1>{heading}</h1>
   </Column>
-  <Column padding="0 2rem" justifyCenter>
+  <Column
+    padding="1rem 2rem"
+    collapsedPadding="1rem 2rem 4rem"
+    flex="1.3"
+    justifyCenter
+  >
     <div class="content">
       <slot />
     </div>
@@ -20,7 +25,7 @@ const { heading, icon } = Astro.props;
 
 <style>
   h1 {
-    margin: 1rem 0 0;
+    margin: 1rem 0;
   }
 
   .content {

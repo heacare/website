@@ -22,7 +22,7 @@ const { preheading, heading, description, actions } = Astro.props;
     </Column>
   </Row>
   <section>
-    <Row>
+    <Row bordered>
       <Column padding="0 2rem">
         <div class="position-relative">
           <div class="bottom-right">
@@ -36,10 +36,10 @@ const { preheading, heading, description, actions } = Astro.props;
       </Column>
     </Row>
     <Row>
-      <Column padding="0 2rem" justifyCenter>
+      <Column padding="0 2rem" justifyCenter flex="2">
         <p>{description}</p>
       </Column>
-      <Column padding="2rem" justifyCenter>
+      <Column padding="2rem" collapsedPadding="0 2rem 2rem" justifyCenter>
         <div class="actions">
           {
             actions.map((link) => (

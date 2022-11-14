@@ -1,9 +1,19 @@
 ---
-const { padding, justifyCenter } = Astro.props;
+const { padding, collapsedPadding, justifyCenter, flex } = Astro.props;
 
 let outerClass = "column";
 if (justifyCenter) {
   outerClass += " justify-center";
+}
+
+let flexValue = "1";
+if (flex) {
+  flexValue = flex;
+}
+
+let collapsedPaddingValue = padding;
+if (collapsedPadding) {
+  collapsedPaddingValue = collapsedPadding;
 }
 ---
 
@@ -11,10 +21,10 @@ if (justifyCenter) {
   <slot />
 </div>
 
-<style define:vars={{ padding }}>
+<style define:vars={{ padding, collapsedPaddingValue, flexValue }}>
   .column {
     /* Column flex */
-    flex: 1;
+    flex: var(--flexValue);
     /* Padding */
     padding: var(--padding);
     /* Lines */
@@ -25,6 +35,15 @@ if (justifyCenter) {
     /* Lines */
     border-right: var(--row-border);
     margin-right: calc(0px - var(--row-thickness));
+  }
+  @media screen and (max-width: 720px) {
+    .column {
+      border-bottom: none;
+      padding: var(--collapsedPaddingValue);
+    }
+    .column:not(:last-child) {
+      border-right: none;
+    }
   }
   .column.justify-center {
     display: flex;
