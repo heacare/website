@@ -1,25 +1,21 @@
 ---
-import Row from "./Row.astro";
-import Column from "./Column.astro";
 import SvgIcon from "./SvgIcon.astro";
 
 const { icon, counter, heading, subheading } = Astro.props;
 ---
 
-<Row>
-  <Column padding="1rem 2rem" collapsedPadding="1rem 1rem">
-    <div class="inner">
-      <h1 class="counter">{counter}</h1>
-      <div class="details">
-        <h1>
-          <SvgIcon icon={icon} height="0.9em" margin="1rem 0" />
-          {heading}
-        </h1>
-        <p>{subheading}</p>
-      </div>
+<div>
+  <div class="inner">
+    <span class="counter">{counter}</span>
+    <div class="details">
+      <h2>
+        <SvgIcon icon={icon} height="0.9em" margin="1rem 0" />
+        {heading}
+      </h2>
+      <p>{subheading}</p>
     </div>
-  </Column>
-</Row>
+  </div>
+</div>
 
 <style>
   .inner {
@@ -30,6 +26,7 @@ const { icon, counter, heading, subheading } = Astro.props;
 
   .counter {
     font-size: 5em;
+    font-family: "DM Serif Display", serif;
     margin-right: 6rem;
   }
   @media screen and (max-width: 720px) {
@@ -47,7 +44,7 @@ const { icon, counter, heading, subheading } = Astro.props;
     flex-basis: 24rem;
   }
 
-  h1,
+  h2,
   p {
     margin: 1rem 0;
   }

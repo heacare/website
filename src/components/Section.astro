@@ -1,0 +1,116 @@
+---
+import Button from "./Button.astro";
+
+const { anchor, heading, actions, theme, align, callout, hasGraphic } =
+  Astro.props;
+
+let outerClass = "";
+if (theme) {
+  outerClass += " theme-" + theme;
+}
+if (align) {
+  outerClass += " align-" + align;
+}
+if (callout) {
+  outerClass += " callout";
+}
+---
+
+<section class={outerClass}>
+  <div class="inner">
+    {
+      hasGraphic ? (
+        <div class="graphic">
+          <slot name="graphic" />
+        </div>
+      ) : null
+    }
+    {anchor ? <a id={anchor} /> : null}
+    <div class="content">
+      <h1>{heading}</h1>
+      <slot />
+      {
+        actions ? (
+          <div class="actions">
+            {actions?.map((link) => (
+              <Button
+                href={link.href}
+                target={link.href.startsWith("http") ? "_blank" : null}
+              >
+                {link.text} &#10140;
+              </Button>
+            ))}
+          </div>
+        ) : null
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .theme-normal {
+    background: white;
+  }
+  .theme-normal-alt {
+    background: linear-gradient(
+      104.29deg,
+      rgba(255, 176, 57, 0.1) 17.32%,
+      rgba(255, 90, 255, 0.1) 89.26%
+    );
+  }
+  .theme-gradient {
+    background: linear-gradient(104.29deg, #ffb039 17.32%, #ff5aff 89.26%);
+    --color-content: var(--color-content-inverted);
+    --color-button: var(--color-button-inverted);
+    --color-button-background: var(--color-button-background-inverted);
+    color: var(--color-content);
+  }
+  .theme-gradient h1 {
+    background: none;
+    background-clip: initial;
+    -webkit-background-clip: initial;
+    color: var(--color-content);
+  }
+
+  section {
+    padding: 8rem 4rem;
+  }
+
+  .inner {
+    max-width: var(--width-md);
+    margin: 0 auto;
+  }
+  .callout .inner {
+    max-width: var(--width-sm);
+  }
+  .align-left .inner {
+    text-align: left;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .align-right .inner {
+    text-align: right;
+    display: flex;
+    flex-direction: row;
+  }
+  .align-center .inner {
+    text-align: center;
+  }
+
+  .graphic {
+    flex: 1;
+  }
+  .content {
+    flex: 1;
+  }
+
+  .actions {
+    margin: 2em 0;
+  }
+  .actions > :global(*) {
+    margin-right: var(--gap-button);
+  }
+  .actions > :global(*:last-child) {
+    margin-right: 0;
+  }
+</style>
