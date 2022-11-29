@@ -18,20 +18,25 @@ const { href, target } = Astro.props;
   button,
   a {
     display: inline-block;
+
     /* Reset styles */
     background: none;
-    color: var(--color-content);
+    color: var(--color-button);
     text-decoration: none;
+
     /* Layout */
     padding: 0.5em 1em;
+
     /* Shape */
-    border: 0.2em solid var(--color-content);
-    border-radius: 0.75em;
+    border: 0.125rem solid var(--color-button);
+    border-radius: 1rem;
+
     /* Text style */
-    font-weight: 600;
+    font-weight: var(--font-weight-button);
+    font-size: var(--font-scale-button);
   }
   button:hover,
   a:hover {
-    background: var(--color-content-subtle);
+    background: var(--color-button-background);
   }
 </style>

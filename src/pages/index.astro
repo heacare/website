@@ -1,11 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
-import ProblemList from "../components/ProblemList.astro";
-import Problem from "../components/Problem.astro";
-import Mission from "../components/Mission.astro";
-import ProjectList from "../components/ProjectList.astro";
-import Project from "../components/Project.astro";
+import Section from "../components/Section.astro";
 import PhaseList from "../components/PhaseList.astro";
 import Phase from "../components/Phase.astro";
 import Footer from "../components/Footer.astro";
@@ -13,6 +9,22 @@ import Footer from "../components/Footer.astro";
 import { gettingStartedLink, manifestoLink } from "../config.ts";
 
 const actions = [
+  {
+    text: "How to join us",
+    href: gettingStartedLink,
+  },
+  {
+    text: "Find out why",
+    href: "#why",
+  },
+];
+const actionsWhy = [
+  {
+    text: "Read manifesto",
+    href: manifestoLink,
+  },
+];
+const actionsJoin = [
   {
     text: "Join us",
     href: gettingStartedLink,
@@ -28,105 +40,101 @@ const actions = [
 >
   <main>
     <Hero
-      preheading="We believe in"
-      heading="Universal Preventive Healthcare."
-      description="Happily Ever After is building a preventive healthcare system that is open, borderless, human-centered and collectively-owned."
+      heading="Collectively creating global preventive care"
+      description="Happily Ever After is a community-run network of health and well-being spaces, to help others nurture their mind, body and soul"
       actions={actions}
     />
-    <ProblemList>
-      <Problem
-        icon="user-injured-regular"
-        heading="Prevention is better than a cure."
-      >
-        <p>
-          Just in the last century, our average lifespans have more than doubled
-          globally through advancements in medicine.
-        </p>
-        <p>
-          But, our increased lifespans come with suffering due to a variety of
-          age-related diseases. We think healthcare should be about preventing
-          suffering not prolonging it.
-        </p>
-      </Problem>
-      <Problem
-        reverse
-        icon="hand-holding-heart-regular"
-        heading="Healthcare is about humans, not technology."
-      >
-        <p>
-          A preventive approach to healthcare will help solve these diseases,
-          but it is only possible if we take ownership for our own health.
-        </p>
-        <p>
-          Unlike conventional healthcare, we need both technological and
-          cultural innovation to create a proactive approach to human
-          well-being.
-        </p>
-      </Problem>
-      <Problem
-        icon="users-regular"
-        heading="Universal healthcare requires open-source tools."
-      >
-        <p>
-          Everyone deserves access to high-quality preventive healthcare, which
-          means healthcare should be a public good.
-        </p>
-        <p>
-          We want to enable truly universal healthcare, through building
-          open-source health tools, products and services.
-        </p>
-      </Problem>
-    </ProblemList>
-    <Mission
-      anchor="mission"
-      heading="Our mission is to add 10 billion years of healthy life to the planet."
-    />
-    <!--
-    <ProjectList heading="Projects" anchor="projects">
-      <Project
-        icon="analytics-regular"
-        anchor="habitat-health"
-        heading="Habitat Health"
-        subheading="Protocol for an open, composable health data network"
-        github="https://github.com/heacare/habitat-sdk-dart"
-        blog="https://mirror.xyz/blog.heacare.eth/IYYBvVHDO4QJZcI1Newu3VttmstTYiePGqzg6SVfjzs"
-      >
-        <p>
-          A civilization’s ability to solve critical challenges to progress,
-          such as avoiding pandemics and solving aging, is positively correlated
-          to information availability. Unfortunately, today, health data is
-          created, controlled and stored by opaque organizations such as
-          governments and large enterprises.
-        </p>
-        <p>
-          Habitat Health is a peer-to-peer data system, that enables an open,
-          composable yet private health data network. With Habitat Health, we
-          believe we can make health data a collaborative, positive-sum system
-          for all participants.
-        </p>
-      </Project>
-    </ProjectList>
-	-->
-    <PhaseList anchor="roadmap" heading="Roadmap">
-      <Phase
-        icon="handshake-alt-regular"
-        counter="1"
-        heading="Grow community"
-        subheading="Gather value-aligned members around understanding the challenges and opportunities in taking the preventive care approach"
-      />
-      <Phase
-        icon="hammer-regular"
-        counter="2"
-        heading="Seed spaces"
-        subheading="Launch pilot health and well-being spaces to validate our impact on community well-being"
-      />
-      <Phase
-        icon="globe-regular"
-        counter="3"
-        heading="Scale network"
-        subheading="Empower members to start autonomous and community-run spaces all over the world"
-      />
-    </PhaseList>
+    <Section
+      anchor="why"
+      heading="Prevention is better than a cure"
+      actions={actionsWhy}
+      theme="gradient"
+      align="left"
+      callout
+    >
+      <p>
+        The current healthcare system is designed to mitigate suffering after an
+        issue is found. A preventive approach avoids suffering altogether
+      </p>
+    </Section>
+    <Section
+      heading="HEA is a space"
+      theme="normal-alt"
+      align="right"
+      hasGraphic
+    >
+      <div slot="graphic"><h1>Hello</h1></div>
+      <p>
+        Our autonomous spaces are operated by local community members and
+        experts. People are enabled to approach well-being in a safe and guided
+        setting. They are cyber-physical environments designed to be accessible
+        to everyone
+      </p>
+    </Section>
+    <Section heading="HEA is a culture" theme="normal" align="left" hasGraphic>
+      <div slot="graphic"><h1>Hello</h1></div>
+      <p>
+        With a strong culture of co-creation and care, members share research
+        and facilitate experiences to help others discover what well-being means
+        to them
+      </p>
+    </Section>
+    <Section
+      heading="HEA is an open health network"
+      theme="normal-alt"
+      align="right"
+      hasGraphic
+    >
+      <div slot="graphic"><h1>Hello</h1></div>
+      <p>
+        Our spaces coordinate globally to share ideas, experiences and tools
+        with each other and the world. Health should be open, and everything we
+        do together is free for anyone else to build on
+      </p>
+    </Section>
+    <Section anchor="roadmap" heading="Roadmap" align="center">
+      <PhaseList>
+        <Phase
+          icon="handshake-alt-regular"
+          counter="1"
+          heading="Grow community"
+          subheading="Gather value-aligned members around understanding the challenges and opportunities in taking the preventive care approach"
+        />
+        <Phase
+          icon="hammer-regular"
+          counter="2"
+          heading="Seed spaces"
+          subheading="Launch pilot health and well-being spaces to validate our impact on community well-being"
+        />
+        <Phase
+          icon="globe-regular"
+          counter="3"
+          heading="Scale network"
+          subheading="Empower members to start autonomous and community-run spaces all over the world"
+        />
+      </PhaseList>
+    </Section>
+    <Section
+      anchor="join"
+      actions={actionsJoin}
+      theme="gradient"
+      align="center"
+      callout
+    >
+      <p>
+        If you would like to contribute to the future we envision, join us in
+        collectively creating global preventive care
+      </p>
+      <p>We're looking for</p>
+    </Section>
+    <Section
+      anchor="supporters"
+      heading="Supporters"
+      theme="normal-alt"
+      align="center"
+    >
+      <p>TODO</p>
+    </Section>
     <Footer />
   </main>
 </Layout>
