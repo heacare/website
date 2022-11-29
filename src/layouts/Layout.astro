@@ -84,16 +84,16 @@ const { default: imageUrl } = await import(`../images/${image}.jpg`);
       }
       @media screen and (max-width: 820px) {
         :root {
-          --base-scale: 90%;
+          --base-scale: 95%;
 
-          --font-scale-hero: 4em;
+          --font-scale-hero: 4rem;
         }
       }
       @media screen and (max-width: 480px) {
         :root {
-          --base-scale: 80%;
+          --base-scale: 85%;
 
-          --font-scale-hero: 3.5em;
+          --font-scale-hero: 3rem;
         }
       }
 
@@ -102,7 +102,13 @@ const { default: imageUrl } = await import(`../images/${image}.jpg`);
         --width-md: 60rem;
         --width-lg: 70rem;
 
+        --gap-sides: 4rem;
         --gap-button: 0.5em;
+      }
+      @media screen and (max-width: 820px) {
+        :root {
+          --gap-sides: 2rem;
+        }
       }
 
       :root {
@@ -170,6 +176,7 @@ const { default: imageUrl } = await import(`../images/${image}.jpg`);
 
       :global(h1) {
         margin: 0.6154em 0;
+        padding: 0.1em 0; /* Ensure all text is within the box */
 
         font-size: var(--font-scale-heading);
         font-family: var(--font-family-heading);
