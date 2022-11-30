@@ -1,7 +1,7 @@
 ---
 import Actions from "./Actions.astro";
 
-const { anchor, heading, actions, theme, align, callout, hasGraphic } =
+const { anchor, heading, actions, theme, align, callout, quote, hasGraphic } =
   Astro.props;
 
 let outerClass = "";
@@ -13,6 +13,9 @@ if (align) {
 }
 if (callout) {
   outerClass += " callout";
+}
+if (quote) {
+  outerClass += " quote";
 }
 ---
 
@@ -71,6 +74,9 @@ if (callout) {
   }
   .callout .inner {
     max-width: var(--width-sm);
+  }
+  .quote {
+    font-size: var(--font-scale-quote);
   }
   .align-left .inner {
     text-align: left;
