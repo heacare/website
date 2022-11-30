@@ -85,7 +85,7 @@ const socials = [
     }
 
     footer {
-      padding: 2rem var(--gap-sides);
+      padding: 4rem var(--gap-sides);
     }
 
     footer .inner {
@@ -93,13 +93,11 @@ const socials = [
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: var(--gap-vertical);
+      gap: var(--gap-section-vertical) var(--gap-section);
       /* Color */
       color: var(--color-navigation);
       /* Font */
       font-size: var(--font-scale-navigation);
-      /* Ensure navigation icons don't have extra space */
-      line-height: 1;
 
       /* Limit width */
       max-width: var(--width-md);
@@ -107,8 +105,9 @@ const socials = [
     }
 
     h4,
+    p,
     ul li {
-      margin: 0.5454em 0;
+      margin: 0.6em 0;
     }
 
     ul {
