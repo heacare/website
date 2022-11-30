@@ -1,5 +1,5 @@
 ---
-import Button from "./Button.astro";
+import Actions from "./Actions.astro";
 
 const { anchor, heading, actions, theme, align, callout, hasGraphic } =
   Astro.props;
@@ -19,30 +19,19 @@ if (callout) {
 <section class={outerClass}>
   <div class="inner">
     {
-      hasGraphic ? (
+      hasGraphic && (
         <div class="graphic">
           <slot name="graphic" />
         </div>
-      ) : null
+      )
     }
-    {anchor ? <a id={anchor} /> : null}
     <div class="content">
-      <h1>{heading}</h1>
-      <slot />
-      {
-        actions ? (
-          <div class="actions">
-            {actions?.map((link) => (
-              <Button
-                href={link.href}
-                target={link.href.startsWith("http") ? "_blank" : null}
-              >
-                {link.text} &#10140;
-              </Button>
-            ))}
-          </div>
-        ) : null
-      }
+      {anchor && <a id={anchor} aria-hidden="true" />}
+      <div class="margins">
+        {heading && <h1>{heading}</h1>}
+        <slot />
+        {actions && <Actions actions={actions} />}
+      </div>
     </div>
   </div>
 </section>
@@ -73,7 +62,7 @@ if (callout) {
   }
 
   section {
-    padding: 8rem var(--gap-sides);
+    padding: 2rem var(--gap-sides);
   }
 
   .inner {
@@ -85,16 +74,23 @@ if (callout) {
   }
   .align-left .inner {
     text-align: left;
+    --items-align: left;
     display: flex;
     flex-direction: row-reverse;
   }
   .align-right .inner {
     text-align: right;
+    --items-align: right;
     display: flex;
     flex-direction: row;
   }
   .align-center .inner {
     text-align: center;
+    --items-align: center;
+  }
+
+  .margins {
+    margin: 6rem auto;
   }
 
   .graphic {
@@ -102,15 +98,5 @@ if (callout) {
   }
   .content {
     flex: 1;
-  }
-
-  .actions {
-    margin: 2em 0;
-  }
-  .actions > :global(*) {
-    margin-right: var(--gap-button);
-  }
-  .actions > :global(*:last-child) {
-    margin-right: 0;
   }
 </style>

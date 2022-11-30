@@ -4,6 +4,7 @@ import Hero from "../components/Hero.astro";
 import Section from "../components/Section.astro";
 import PhaseList from "../components/PhaseList.astro";
 import Phase from "../components/Phase.astro";
+import Scroller from "../components/Scroller.astro";
 import Footer from "../components/Footer.astro";
 
 import { gettingStartedLink, manifestoLink } from "../config.ts";
@@ -125,7 +126,9 @@ const actionsJoin = [
         If you would like to contribute to the future we envision, join us in
         collectively creating global preventive care
       </p>
-      <p>We're looking for</p>
+      <p>We're looking for <Scroller duration="20s">
+		<b>Clinicians ∙ Health Coaches ∙ Therapists ∙ Meditation Guides ∙ Allied Health Professionals ∙ Designers ∙ Creatives ∙ Digital Marketers ∙ Health Influencers ∙ Software Engineers ∙ Writers ∙ Storytellers ∙ Sleep Researchers ∙ </b>
+	  </Scroller></p>
     </Section>
     <Section
       anchor="supporters"

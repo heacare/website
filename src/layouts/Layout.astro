@@ -86,14 +86,14 @@ const { default: imageUrl } = await import(`../images/${image}.jpg`);
         :root {
           --base-scale: 95%;
 
-          --font-scale-hero: 4rem;
+          --font-scale-hero: 4.2rem;
         }
       }
       @media screen and (max-width: 480px) {
         :root {
           --base-scale: 85%;
 
-          --font-scale-hero: 3rem;
+          --font-scale-hero: 3.25rem;
         }
       }
 
@@ -102,8 +102,10 @@ const { default: imageUrl } = await import(`../images/${image}.jpg`);
         --width-md: 60rem;
         --width-lg: 70rem;
 
+		--gap-vertical: 2rem;
         --gap-sides: 4rem;
-        --gap-button: 0.5em;
+        --gap-actions: 2rem;
+        --gap-actions-vertical: 1rem;
       }
       @media screen and (max-width: 820px) {
         :root {
@@ -140,7 +142,7 @@ const { default: imageUrl } = await import(`../images/${image}.jpg`);
             rgba(255, 255, 255, 0.66)
           ),
           linear-gradient(20.09deg, #ffb039 12.82%, #ff5aff 95.69%);
-        --color-navigation: var(--color-content);
+        --color-navigation: #555555;
         --color-button: var(--color-content);
         --color-button-inverted: var(--color-content-inverted);
         --color-button-background: rgba(34, 34, 34, 0.1);
@@ -148,7 +150,6 @@ const { default: imageUrl } = await import(`../images/${image}.jpg`);
         --color-button-inverted: var(--color-content-inverted);
         --color-content: #222222;
         --color-content-inverted: #ffffff;
-        --color-content-light: #555555;
         --color-subtle: rgba(0, 0, 0, 0.05);
       }
 
@@ -201,7 +202,7 @@ const { default: imageUrl } = await import(`../images/${image}.jpg`);
       :global(p),
       :global(ul),
       :global(ol) {
-        margin: 0.54em 0;
+        margin: 0.5454em 0;
       }
 
       :global(code) {

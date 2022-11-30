@@ -1,16 +1,17 @@
 ---
-import Button from "./Button.astro";
+import Actions from "./Actions.astro";
 import Navigation from "./Navigation.astro";
-import SvgImage from "./SvgImage.astro";
 import color from "../videos/color.mp4";
 
 const { heading, description, actions } = Astro.props;
 ---
 
 <div class="wrapper">
-  <!-- <video class="background" muted autoplay loop playsinline>
+  <!--
+  <video class="background" muted autoplay loop playsinline>
     <source src={color} type="video/mp4" />
-  </video> -->
+  </video>
+  -->
 
   <div class="navigation">
     <Navigation />
@@ -20,19 +21,10 @@ const { heading, description, actions } = Astro.props;
       <h1>
         {heading}
       </h1>
-      <p>{description}</p>
-      <div class="actions">
-        {
-          actions.map((link) => (
-            <Button
-              href={link.href}
-              target={link.href.startsWith("http") ? "_blank" : null}
-            >
-              {link.text} &#10140;
-            </Button>
-          ))
-        }
+      <div class="limit">
+        <p>{description}</p>
       </div>
+      <Actions actions={actions} />
     </div>
   </section>
 </div>
@@ -80,6 +72,12 @@ const { heading, description, actions } = Astro.props;
     margin: 0 auto;
 
     text-align: center;
+    --items-align: center;
+  }
+
+  .limit {
+    max-width: var(--width-sm);
+    margin: 0 auto;
   }
 
   h1 {
@@ -89,20 +87,11 @@ const { heading, description, actions } = Astro.props;
     line-height: var(--font-line-height-hero);
 
     background-image: var(--color-gradient-dense);
+
+    margin: 2rem 0;
   }
 
   p {
     font-size: var(--font-scale-lg);
-    max-width: var(--width-sm);
-  }
-
-  .actions {
-    margin: 2em 0;
-  }
-  .actions > :global(*) {
-    margin-right: var(--gap-button);
-  }
-  .actions > :global(*:last-child) {
-    margin-right: 0;
   }
 </style>
