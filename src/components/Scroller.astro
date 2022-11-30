@@ -1,0 +1,61 @@
+---
+const { duration } = Astro.props;
+---
+
+<span class="wrapper">
+  <span class="inner">
+    <span class="moving">
+      {
+        Array(2).fill(
+          <span aria-hidden="true">
+            <slot />
+          </span>
+        )
+      }
+      <span><slot /></span>
+      {
+        Array(2).fill(
+          <span aria-hidden="true">
+            <slot />
+          </span>
+        )
+      }
+    </span>
+  </span>
+</span>
+
+<style define:vars={{ duration }}>
+  .wrapper {
+    display: block;
+    height: 1.3em;
+    vertical-align: middle;
+  }
+
+  .inner {
+    display: block;
+    overflow: hidden;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+  .moving {
+    display: inline-block;
+    width: max-content;
+    animation: scroller-scroll var(--duration) infinite linear;
+    will-change: transform;
+  }
+  .moving span {
+    display: inline;
+  }
+
+  @keyframes scroller-scroll {
+    0% {
+      transform: translateX(-40%);
+    }
+    100% {
+      transform: translateX(-60%);
+    }
+  }
+</style>
