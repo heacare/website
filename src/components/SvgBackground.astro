@@ -1,0 +1,47 @@
+---
+let { height, rotate, offset, position, image } = Astro.props;
+height ??= "12em";
+rotate ??= "0deg";
+offset ??= "-0em";
+position ??= "center";
+
+let spanClass = "";
+
+spanClass += ` position-${position}`;
+
+const { default: html } = await import(`../images/${image}.svg?raw`);
+---
+
+<span class={spanClass} set:html={html}></span>
+
+<style define:vars={{ height, rotate, offset }}>
+  span {
+    /* Set height based on prop */
+    height: var(--height);
+    display: inline-block;
+
+    position: absolute;
+  }
+  @media screen and (max-width: 820px) {
+    span {
+      height: calc(20vw + 4em);
+    }
+  }
+
+  span.position-bottom-left {
+    left: var(--offset);
+    bottom: 1em;
+  }
+  span.position-bottom-right {
+    right: var(--offset);
+    bottom: 1em;
+  }
+
+  span :global(svg) {
+    /* Styles cannot be added directly to the imported SVG. Instead, the SVG is wrapped in a height-bounding element and the SVG is scaled to the parent */
+    height: 100%;
+    width: auto;
+    /* Use currentColor as fill */
+    fill: var(--color-subtle);
+  }
+</style>

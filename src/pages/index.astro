@@ -5,6 +5,7 @@ import Section from "../components/Section.astro";
 import PhaseList from "../components/PhaseList.astro";
 import Phase from "../components/Phase.astro";
 import Scroller from "../components/Scroller.astro";
+import Supporter from "../components/Supporter.astro";
 import Footer from "../components/Footer.astro";
 
 import { gettingStartedLink, manifestoLink } from "../config.ts";
@@ -29,6 +30,30 @@ const actionsJoin = [
   {
     text: "Join us",
     href: gettingStartedLink,
+  },
+];
+
+import mistletoe from "../images/3rd-party/Mistletoe Logo.svg";
+import audacity from "../images/3rd-party/Audacity Logo.svg";
+import kernel from "../images/3rd-party/Kernel Logo.svg";
+import colony from "../images/3rd-party/Colony DAO Club Logo.svg";
+
+const supporters = [
+  {
+    title: "Mistletoe",
+    src: mistletoe,
+  },
+  {
+    title: "Audacity",
+    src: audacity,
+  },
+  {
+    title: "Kernel",
+    src: kernel,
+  },
+  {
+    title: "Colony DAO Club",
+    src: colony,
   },
 ];
 ---
@@ -144,7 +169,9 @@ const actionsJoin = [
       theme="normal-alt"
       align="center"
     >
-      <p>TODO</p>
+      <div>
+        {supporters.map((s) => <Supporter src={s.src} title={s.title} />)}
+      </div>
     </Section>
     <Footer />
   </main>
