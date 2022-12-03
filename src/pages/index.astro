@@ -33,6 +33,10 @@ const actionsJoin = [
   },
 ];
 
+import homeHeart from "../images/home-heart.svg";
+import peopleArrows from "../images/people-arrows.svg";
+import chartNetwork from "../images/chart-network.svg";
+
 import mistletoe from "../images/3rd-party/Mistletoe Logo.svg";
 import audacity from "../images/3rd-party/Audacity Logo.svg";
 import kernel from "../images/3rd-party/Kernel Logo.svg";
@@ -89,7 +93,7 @@ const supporters = [
       align="right"
       hasGraphic
     >
-      <div slot="graphic"><h1>Hello</h1></div>
+      <div slot="graphic"><img src={homeHeart} /></div>
       <p>
         Our autonomous spaces are operated by local community members and
         experts. People are enabled to approach well-being in a safe and guided
@@ -98,7 +102,7 @@ const supporters = [
       </p>
     </Section>
     <Section heading="HEA is a culture" theme="normal" align="left" hasGraphic>
-      <div slot="graphic"><h1>Hello</h1></div>
+      <div slot="graphic"><img src={peopleArrows} /></div>
       <p>
         With a strong culture of co-creation and care, members share research
         and facilitate experiences to help others discover what well-being means
@@ -111,7 +115,7 @@ const supporters = [
       align="right"
       hasGraphic
     >
-      <div slot="graphic"><h1>Hello</h1></div>
+      <div slot="graphic"><img src={chartNetwork} /></div>
       <p>
         Our spaces coordinate globally to share ideas, experiences and tools
         with each other and the world. Health should be open, and everything we

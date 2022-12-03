@@ -83,16 +83,24 @@ if (quote) {
     --items-align: left;
     display: flex;
     flex-direction: row-reverse;
+    align-items: center;
   }
   .align-right .inner {
     text-align: right;
     --items-align: right;
     display: flex;
     flex-direction: row;
+    align-items: center;
   }
   .align-center .inner {
     text-align: center;
     --items-align: center;
+  }
+  @media screen and (max-width: 640px) {
+    .align-right .inner,
+    .align-left .inner {
+      flex-direction: column;
+    }
   }
 
   .margins {
@@ -101,7 +109,37 @@ if (quote) {
 
   .graphic {
     flex: 1;
+
+    margin: 3rem 0;
   }
+  .graphic :global(img) {
+    width: 100%;
+  }
+  .align-left .graphic {
+    margin-right: calc(var(--gap-sides) * -1);
+    margin-left: var(--gap-section-vertical);
+
+    position: relative;
+    right: -9vw;
+  }
+  .align-right .graphic {
+    margin-left: calc(var(--gap-sides) * -1);
+    margin-right: var(--gap-section-vertical);
+
+    position: relative;
+    left: -9vw;
+  }
+  @media screen and (max-width: 640px) {
+    .graphic {
+      margin: 6rem 0 -4rem 0 !important;
+      position: static !important;
+    }
+
+    .graphic :global(img) {
+      width: 40%;
+    }
+  }
+
   .content {
     flex: 1;
   }
