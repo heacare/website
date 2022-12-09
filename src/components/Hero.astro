@@ -1,19 +1,12 @@
 ---
 import Actions from "./Actions.astro";
 import Navigation from "./Navigation.astro";
-import SvgBackground from "./SvgBackground.astro";
-import color from "../videos/color.mp4";
+import HeroBackground from "./HeroBackground.astro";
 
 const { heading, description, actions } = Astro.props;
 ---
 
 <div class="wrapper">
-  <!--
-  <video class="background" muted autoplay loop playsinline>
-    <source src={color} type="video/mp4" />
-  </video>
-  -->
-
   <div class="navigation">
     <Navigation />
   </div>
@@ -28,14 +21,7 @@ const { heading, description, actions } = Astro.props;
       <Actions actions={actions} />
     </div>
   </section>
-  <div class="hero-graphic">
-    <SvgBackground image="mark" position="bottom-right" offset="-5em" />
-    <SvgBackground
-      image="hand-holding-heart-regular"
-      position="bottom-left"
-      offset="-1em"
-    />
-  </div>
+  <HeroBackground />
 </div>
 
 <style>
@@ -100,6 +86,7 @@ const { heading, description, actions } = Astro.props;
     line-height: var(--font-line-height-hero);
 
     background-image: var(--color-gradient-dense);
+    background-size: 1200px;
 
     margin: 2rem 0;
   }
@@ -108,21 +95,3 @@ const { heading, description, actions } = Astro.props;
     font-size: var(--font-scale-lg);
   }
 </style>
-
-<script>
-  import onScroll from "../onscroll.ts";
-
-  onScroll(
-    document.querySelectorAll(".hero-graphic"),
-    (ele) => ele,
-    (ele, { scrollY, innerHeight }) => {
-      const shift = scrollY / innerHeight;
-      const offset = shift * 200;
-      if (scrollY < innerHeight) {
-        ele.style.transform = `translateY(${offset}px)`;
-      } else {
-        ele.style.transform = `translateY(0px)`;
-      }
-    }
-  );
-</script>

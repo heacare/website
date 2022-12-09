@@ -135,7 +135,8 @@ const { default: imageUrl } = await import(`../images/${image}.jpg`);
         --color-gradient-simple: linear-gradient(
           104.29deg,
           #ffb039 17.32%,
-          #ff5aff 89.26%
+          #ff5aff 89.26%,
+          #ffb039 100%
         );
         --color-gradient-simple-2: linear-gradient(
             0deg,
@@ -189,6 +190,18 @@ const { default: imageUrl } = await import(`../images/${image}.jpg`);
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
+
+        background-size: 800px;
+        animation: gradient-simple-animated 15s infinite ease-in-out alternate;
+      }
+
+      @keyframes gradient-simple-animated {
+        0% {
+          background-position-x: -1500px;
+        }
+        100% {
+          background-position-x: 1500px;
+        }
       }
 
       :global(h2) {
