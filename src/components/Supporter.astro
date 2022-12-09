@@ -1,13 +1,14 @@
 ---
-const { src, title } = Astro.props;
+const { src, title, maxHeight } = Astro.props;
 ---
 
 <img src={src} alt={title} title={title} />
 
-<style>
+<style define:vars={{ maxHeight }}>
   img {
-    height: 3em;
-    max-width: 11em;
+    height: 2.5em;
+    max-height: var(--maxHeight);
+    max-width: 10em;
 
     vertical-align: middle;
     margin: 1em;

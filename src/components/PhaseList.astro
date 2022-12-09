@@ -1,3 +1,48 @@
-<div>
+<div class="phase-list">
+  <div class="line"></div>
   <slot />
 </div>
+
+<style>
+  .phase-list {
+    position: relative;
+  }
+
+  .line {
+    position: absolute;
+    left: 5rem;
+    top: 0;
+    height: 100%;
+
+    width: 4px;
+    background: var(--color-content);
+  }
+</style>
+
+<script>
+  import onScroll from "../onscroll.ts";
+
+  onScroll(
+    document.querySelectorAll(".phase-list"),
+    (ele) => ({
+      ele,
+      eleLine: ele.querySelector(".line"),
+    }),
+    ({ ele, eleLine }, { scrollY, innerHeight }) => {
+      const startOffset = ele.offsetTop - innerHeight + innerHeight * 0.1;
+      const endOffset =
+        ele.offsetTop - innerHeight * 0.5 + ele.offsetHeight * 0.5;
+      const percent =
+        ((scrollY - startOffset) / (endOffset - startOffset)) * 100;
+      if (scrollY < ele.offsetTop - innerHeight - 16) {
+        eleLine.style.height = "100%";
+      } else if (scrollY < startOffset) {
+        eleLine.style.height = "0%";
+      } else if (scrollY < endOffset) {
+        eleLine.style.height = percent + "%";
+      } else {
+        eleLine.style.height = "100%";
+      }
+    }
+  );
+</script>

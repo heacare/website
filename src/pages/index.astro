@@ -50,6 +50,7 @@ const supporters = [
   {
     title: "Audacity",
     src: audacity,
+    maxHeight: "1.75em",
   },
   {
     title: "Kernel",
@@ -122,22 +123,19 @@ const supporters = [
         do together is free for anyone else to build on
       </p>
     </Section>
-    <Section anchor="roadmap" heading="Roadmap" align="center">
+    <Section anchor="roadmap" heading="Roadmap" align="center" callout>
       <PhaseList>
         <Phase
-          icon="handshake-alt-regular"
           counter="1"
           heading="Grow community"
           subheading="Gather value-aligned members around understanding the challenges and opportunities in taking the preventive care approach"
         />
         <Phase
-          icon="hammer-regular"
           counter="2"
           heading="Seed spaces"
           subheading="Launch pilot health and well-being spaces to validate our impact on community well-being"
         />
         <Phase
-          icon="globe-regular"
           counter="3"
           heading="Scale network"
           subheading="Empower members to start autonomous and community-run spaces all over the world"
@@ -174,7 +172,11 @@ const supporters = [
       align="center"
     >
       <div>
-        {supporters.map((s) => <Supporter src={s.src} title={s.title} />)}
+        {
+          supporters.map((s) => (
+            <Supporter src={s.src} title={s.title} maxHeight={s.maxHeight} />
+          ))
+        }
       </div>
     </Section>
     <Footer />
