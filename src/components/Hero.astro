@@ -28,12 +28,14 @@ const { heading, description, actions } = Astro.props;
       <Actions actions={actions} />
     </div>
   </section>
-  <SvgBackground image="mark" position="bottom-right" offset="-5em" />
-  <SvgBackground
-    image="hand-holding-heart-regular"
-    position="bottom-left"
-    offset="-1em"
-  />
+  <div class="hero-graphic">
+    <SvgBackground image="mark" position="bottom-right" offset="-5em" />
+    <SvgBackground
+      image="hand-holding-heart-regular"
+      position="bottom-left"
+      offset="-1em"
+    />
+  </div>
 </div>
 
 <style>
@@ -106,3 +108,21 @@ const { heading, description, actions } = Astro.props;
     font-size: var(--font-scale-lg);
   }
 </style>
+
+<script>
+  import onScroll from "../onscroll.ts";
+
+  onScroll(
+    document.querySelectorAll(".hero-graphic"),
+    (ele) => ele,
+    (ele, { scrollY, innerHeight }) => {
+      const shift = scrollY / innerHeight;
+      const offset = shift * 200;
+      if (scrollY < innerHeight) {
+        ele.style.transform = `translateY(${offset}px)`;
+      } else {
+        ele.style.transform = `translateY(0px)`;
+      }
+    }
+  );
+</script>

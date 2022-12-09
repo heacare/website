@@ -66,6 +66,7 @@ if (quote) {
 
   section {
     padding: 2rem var(--gap-sides);
+    overflow: hidden;
   }
 
   .inner {
@@ -104,26 +105,27 @@ if (quote) {
   }
 
   .margins {
-    margin: 6rem auto;
+    margin: 8rem auto;
   }
 
   .graphic {
     flex: 1;
 
-    margin: 3rem 0;
+    margin: 6rem 0;
+    --exit: calc(var(--gap-sides) * -1);
   }
   .graphic :global(img) {
     width: 100%;
   }
   .align-left .graphic {
-    margin-right: calc(var(--gap-sides) * -1);
+    margin-right: var(--exit);
     margin-left: var(--gap-section-vertical);
 
     position: relative;
     right: -9vw;
   }
   .align-right .graphic {
-    margin-left: calc(var(--gap-sides) * -1);
+    margin-left: var(--exit);
     margin-right: var(--gap-section-vertical);
 
     position: relative;
@@ -139,8 +141,36 @@ if (quote) {
       width: 40%;
     }
   }
+  @media screen and (min-width: 1088px) {
+    .graphic {
+      --exit: calc(-23.5vw + 12rem);
+    }
+  }
 
   .content {
     flex: 1;
   }
 </style>
+
+<script>
+  import onScroll from "../onscroll.ts";
+
+  onScroll(
+    document.querySelectorAll("section .graphic"),
+    (ele) => ele,
+    (ele, { scrollY, innerHeight }) => {
+      const startOffset = ele.offsetTop - innerHeight - 16 * 8;
+      const endOffset = ele.offsetTop + ele.offsetHeight + 16 * 8;
+      const shift =
+        ((scrollY - startOffset) / (endOffset - startOffset)) * 2 - 1;
+      const offset = shift * 200;
+      if (scrollY < startOffset) {
+        ele.style.transform = `translateY(0px)`;
+      } else if (scrollY < endOffset) {
+        ele.style.transform = `translateY(${offset}px)`;
+      } else {
+        ele.style.transform = `translateY(0px)`;
+      }
+    }
+  );
+</script>

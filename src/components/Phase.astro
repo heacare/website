@@ -4,48 +4,42 @@ import SvgIcon from "./SvgIcon.astro";
 const { icon, counter, heading, subheading } = Astro.props;
 ---
 
-<div>
-  <div class="inner">
-    <span class="counter">{counter}</span>
-    <div class="details">
-      <h2>
-        <SvgIcon icon={icon} height="0.9em" margin="1rem 0" />
-        {heading}
-      </h2>
-      <p>{subheading}</p>
-    </div>
+<div class="row">
+  <h2 class="counter">{counter}</h2>
+  <div class="details">
+    <h2>
+      {heading}
+    </h2>
+    <p>{subheading}</p>
   </div>
 </div>
 
 <style>
-  .inner {
+  .row {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    gap: 4rem;
+
+    margin: 4rem 0;
   }
 
   .counter {
-    font-size: 5em;
-    font-family: "DM Serif Display", serif;
-    margin-right: 6rem;
-  }
-  @media screen and (max-width: 720px) {
-    .counter {
-      margin-right: 4rem;
-    }
-  }
-  @media screen and (max-width: 480px) {
-    .counter {
-      margin-right: 2rem;
-    }
+    font-size: 3.5rem;
+    text-align: right;
+
+    width: 3rem;
+    margin: 0;
   }
 
   .details {
-    flex-basis: 24rem;
+    flex: 1;
+    text-align: left;
+
+    margin: -1rem 0;
   }
 
-  h2,
-  p {
+  .details h2,
+  .details p {
     margin: 1rem 0;
   }
 </style>
