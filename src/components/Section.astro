@@ -105,13 +105,13 @@ if (quote) {
   }
 
   .margins {
-    margin: 8rem auto;
+    margin: calc(var(--gap-section) - 2rem) auto;
   }
 
   .graphic {
     flex: 1;
 
-    margin: 6rem 0;
+    margin: calc(var(--gap-section-graphic) - 2rem) 0;
     --exit: calc(var(--gap-sides) * -1);
   }
   .graphic :global(img) {
@@ -119,14 +119,14 @@ if (quote) {
   }
   .align-left .graphic {
     margin-right: var(--exit);
-    margin-left: var(--gap-section-vertical);
+    margin-left: var(--gap-content-vertical);
 
     position: relative;
     right: -9vw;
   }
   .align-right .graphic {
     margin-left: var(--exit);
-    margin-right: var(--gap-section-vertical);
+    margin-right: var(--gap-content-vertical);
 
     position: relative;
     left: -9vw;
@@ -158,12 +158,16 @@ if (quote) {
   onScroll(
     document.querySelectorAll("section .graphic"),
     (ele) => ele,
-    (ele, { scrollY, innerHeight }) => {
+    (ele, { scrollY, innerHeight, innerWidth }) => {
       const startOffset = ele.offsetTop - innerHeight - 16 * 8;
       const endOffset = ele.offsetTop + ele.offsetHeight + 16 * 8;
       const shift =
         ((scrollY - startOffset) / (endOffset - startOffset)) * 2 - 1;
       const offset = shift * 200;
+      if (innerWidth <= 640 && offset >= 0) {
+        ele.style.transform = `translateY(0px)`;
+        return;
+      }
       if (scrollY < startOffset) {
         ele.style.transform = `translateY(0px)`;
       } else if (scrollY < endOffset) {

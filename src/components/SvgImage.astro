@@ -13,6 +13,8 @@ const { default: html } = await import(`../images/${image}.svg?raw`);
     /* Set height based on prop */
     height: var(--height);
     display: inline-block;
+    vertical-align: middle;
+    line-height: 100%;
   }
 
   span :global(svg) {
