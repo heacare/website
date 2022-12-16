@@ -50,7 +50,7 @@
   opacity: 0.125;
 }
 .cardPlaceholder {
-  height: calc(288px + 32px + 160px);
+  height: calc(280px + 32px + 160px);
 }
 .graphic {
   display: block;
