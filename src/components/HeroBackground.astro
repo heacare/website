@@ -55,7 +55,7 @@ import color from "../videos/color.mp4";
     (ele, { scrollY, innerHeight }) => {
       const shift = scrollY / innerHeight;
       const offset = shift * 200;
-      if (scrollY < innerHeight) {
+      if (scrollY < ele.offsetHeight) {
         ele.style.transform = `translateY(${offset}px)`;
       } else {
         ele.style.transform = `translateY(0px)`;

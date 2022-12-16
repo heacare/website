@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <div class="content"><slot /></div>
+  <div>&#129083;</div>
+</div>
+
+<style>
+  .wrapper {
+    margin: 1.4545em 0;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    animation: ask-scroll-attention 1s infinite ease-in-out alternate;
+  }
+  @keyframes ask-scroll-attention {
+    0% {
+      transform: translateY(-6px);
+    }
+    100% {
+      transform: translateY(6px);
+    }
+  }
+
+  .content {
+    font-size: var(--font-scale-body-2);
+    font-weight: 700;
+  }
+</style>
