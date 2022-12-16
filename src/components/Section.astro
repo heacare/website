@@ -134,7 +134,7 @@ if (quote) {
   }
   @media screen and (max-width: 640px) {
     .graphic {
-      margin: 96px 0 -64px 0 !important;
+      margin: var(--gap-section) 0 calc(var(--gap-content) - var(--gap-section)) 0 !important;
       position: static !important;
     }
 
