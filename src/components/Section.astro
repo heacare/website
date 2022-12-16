@@ -65,7 +65,8 @@ if (quote) {
   }
 
   section {
-    padding: 2rem var(--gap-sides);
+    padding: 0 var(--gap-sides);
+    /* Keep graphics and margins inside box */
     overflow: hidden;
   }
 
@@ -105,13 +106,13 @@ if (quote) {
   }
 
   .margins {
-    margin: calc(var(--gap-section) - 2rem) auto;
+    margin: var(--gap-section) auto;
   }
 
   .graphic {
     flex: 1;
 
-    margin: calc(var(--gap-section-graphic) - 2rem) 0;
+    margin: var(--gap-section-graphic) 0;
     --exit: calc(var(--gap-sides) * -1);
   }
   .graphic :global(img) {
