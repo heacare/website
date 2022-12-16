@@ -1,12 +1,18 @@
 ---
 import Actions from "./Actions.astro";
+import AskScroll from "./AskScroll.astro";
 import Navigation from "./Navigation.astro";
 import HeroBackground from "./HeroBackground.astro";
 
-const { heading, description, actions } = Astro.props;
+const { heading, description, actions, fullscreen, askScroll } = Astro.props;
+
+let wrapperClass = "wrapper";
+if (fullscreen) {
+  wrapperClass += " fullscreen";
+}
 ---
 
-<div class="wrapper">
+<div class={wrapperClass}>
   <div class="navigation">
     <Navigation />
   </div>
@@ -18,7 +24,8 @@ const { heading, description, actions } = Astro.props;
       <div class="limit">
         <p>{description}</p>
       </div>
-      <Actions actions={actions} />
+      {actions && <Actions actions={actions} />}
+      {askScroll && <AskScroll>{askScroll}</AskScroll>}
     </div>
   </section>
   <HeroBackground />
@@ -38,10 +45,15 @@ const { heading, description, actions } = Astro.props;
 
     /* Create a positioning scope for the background */
     position: relative;
-    /* Keep margins inside box */
-    padding: 1rem 0;
-    /* Ensure background elements don't overflow */
+    /* Give more space after the content */
+    padding-bottom: 5rem;
+    /* Ensure background elements don't overflow and keep margins inside box */
     overflow: hidden;
+  }
+  .wrapper.fullscreen {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 
   .background {
@@ -58,12 +70,18 @@ const { heading, description, actions } = Astro.props;
   }
 
   .navigation {
-    margin: 2rem var(--gap-sides);
+    margin: var(--gap-content) var(--gap-sides);
   }
 
   .content {
-    margin: calc(var(--gap-section) + 2rem) var(--gap-sides);
-    margin-bottom: 12rem;
+    margin: var(--gap-section-hero) var(--gap-sides);
+  }
+  .fullscreen .content {
+    margin: 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .inner {
@@ -92,6 +110,6 @@ const { heading, description, actions } = Astro.props;
   }
 
   p {
-    font-size: var(--font-scale-lg);
+    font-size: var(--font-scale-body);
   }
 </style>
