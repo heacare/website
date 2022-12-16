@@ -48,9 +48,7 @@ if (full) {
           headingActions ? (
             <div class="heading-area">
               <h1>{heading}</h1>
-              <div class="heading-actions">
-                <Actions actions={headingActions} />
-              </div>
+              <Actions actions={headingActions} />
             </div>
           ) : (
             heading && <h1>{heading}</h1>
@@ -192,6 +190,14 @@ if (full) {
   }
   .heading-area h1 {
     flex: 1;
+  }
+  .heading-area .actions {
+  }
+  @media screen and (max-width: 640px) {
+    .heading-area {
+      display: block;
+      margin: 0;
+    }
   }
 </style>
 

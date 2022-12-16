@@ -37,6 +37,7 @@
 .card {
   flex-shrink: 0;
   width: 320px;
+  max-width: 75vw;
 
   background: var(--color-background);
   border-radius: 16px;
