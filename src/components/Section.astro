@@ -1,8 +1,18 @@
 ---
 import Actions from "./Actions.astro";
 
-const { anchor, heading, actions, theme, align, callout, quote, hasGraphic } =
-  Astro.props;
+const {
+  anchor,
+  heading,
+  actions,
+  headingActions,
+  theme,
+  align,
+  callout,
+  quote,
+  full,
+  hasGraphic,
+} = Astro.props;
 
 let outerClass = "";
 if (theme) {
@@ -16,6 +26,9 @@ if (callout) {
 }
 if (quote) {
   outerClass += " quote";
+}
+if (full) {
+  outerClass += " full";
 }
 ---
 
@@ -31,7 +44,18 @@ if (quote) {
     <div class="content">
       {anchor && <a id={anchor} aria-hidden="true" />}
       <div class="margins">
-        {heading && <h1>{heading}</h1>}
+        {
+          headingActions ? (
+            <div class="heading-area">
+              <h1>{heading}</h1>
+              <div class="heading-actions">
+                <Actions actions={headingActions} />
+              </div>
+            </div>
+          ) : (
+            heading && <h1>{heading}</h1>
+          )
+        }
         <slot />
         {actions && <Actions actions={actions} />}
       </div>
@@ -70,6 +94,10 @@ if (quote) {
     overflow: hidden;
   }
 
+  .quote {
+    font-size: var(--font-scale-quote);
+  }
+
   .inner {
     max-width: var(--width-md);
     margin: 0 auto;
@@ -77,8 +105,8 @@ if (quote) {
   .callout .inner {
     max-width: var(--width-sm);
   }
-  .quote {
-    font-size: var(--font-scale-quote);
+  .full .inner {
+    max-width: none;
   }
   .align-left .inner {
     text-align: left;
@@ -107,6 +135,9 @@ if (quote) {
 
   .margins {
     margin: var(--gap-section) auto;
+  }
+  .full .margins {
+    margin: var(--gap-section-full) auto;
   }
 
   .graphic {
@@ -152,13 +183,23 @@ if (quote) {
   .content {
     flex: 1;
   }
+
+  .heading-area {
+    display: flex;
+    align-items: center;
+    /* Collapse surrounding margins */
+    margin: -2rem 0;
+  }
+  .heading-area h1 {
+    flex: 1;
+  }
 </style>
 
 <script>
   import onScroll from "../onscroll.ts";
 
   onScroll(
-    document.querySelectorAll("section .graphic"),
+    document.querySelectorAll("section > .inner > .graphic"),
     (ele) => ele,
     (ele, { scrollY, innerHeight, innerWidth }) => {
       const startOffset = ele.offsetTop - innerHeight - 16 * 8;
