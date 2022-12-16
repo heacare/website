@@ -26,12 +26,24 @@ export default function Events({ lumaId }: Props) {
   if (isLoading) {
     return (
       <div className={styles.innerLoading}>
-        {Array(8).map((_, i) => (
-          <div
-            key={i}
-            className={styles.card + " " + styles.cardPlaceholder}
-          ></div>
-        ))}
+        {Array(8)
+          .fill(null)
+          .map((_, i) => (
+            <div
+              key={i}
+              className={styles.card + " " + styles.cardPlaceholder}
+            ></div>
+          ))}
+      </div>
+    );
+  }
+
+  const events = transformLuma(data);
+
+  if (events.length === 0) {
+    return (
+      <div className={styles.innerMessage} title={error}>
+        No upcoming events
       </div>
     );
   }
@@ -39,11 +51,9 @@ export default function Events({ lumaId }: Props) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.inner}>
-        {transformLuma(data)
-          .filter(upcomingEvent)
-          .map((event) => (
-            <Event key={event.id} event={event} />
-          ))}
+        {events.filter(upcomingEvent).map((event) => (
+          <Event key={event.id} event={event} />
+        ))}
       </div>
     </div>
   );
