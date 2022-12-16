@@ -11,5 +11,6 @@ export const gettingStartedLink =
   "https://heacare.notion.site/Getting-Started-Guide-56db52964ff04cc98ea309a64c4b7723";
 export const productWaitlistLink =
   "https://flourishea.typeform.com/to/JHPvq3mi";
+export const eventsLink = "https://lu.ma/hea-global";
 
 export const siteName = "Happily Ever After";

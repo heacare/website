@@ -2,22 +2,19 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Section from "../components/Section.astro";
+import Events from "../components/Events.tsx";
 import PhaseList from "../components/PhaseList.astro";
 import Phase from "../components/Phase.astro";
 import Scroller from "../components/Scroller.astro";
 import Supporter from "../components/Supporter.astro";
 import Footer from "../components/Footer.astro";
 
-import { gettingStartedLink, manifestoLink } from "../config.ts";
+import { eventsLink, gettingStartedLink, manifestoLink } from "../config.ts";
 
-const actions = [
+const actionsEvents = [
   {
-    text: "How to join us",
-    href: gettingStartedLink,
-  },
-  {
-    text: "Find out why",
-    href: "#why",
+    text: "View all events",
+    href: eventsLink,
   },
 ];
 const actionsWhy = [
@@ -76,6 +73,15 @@ const supporters = [
       askScroll="Find out why"
       fullscreen
     />
+    <Section
+      anchor="events"
+      heading="Upcoming events"
+      headingActions={actionsEvents}
+      theme="normal-alt"
+      full
+    >
+      <Events client:load lumaId="cal-JWoirQrLlZI2S53" />
+    </Section>
     <Section
       anchor="why"
       heading="Prevention is better than a cure"
