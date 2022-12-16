@@ -16,7 +16,7 @@ let data = <ScrollData>{
 let ticking = false;
 let handlers = <ScrollHandler[]>[];
 
-document.addEventListener("scroll", (e) => {
+function dispatch() {
   data = {
     scrollX: window.scrollX,
     scrollY: window.scrollY,
@@ -32,9 +32,12 @@ document.addEventListener("scroll", (e) => {
     });
     ticking = true;
   }
-});
+}
 
-export default function onScroll<K, T>(
+document.addEventListener("scroll", dispatch);
+window.addEventListener("resize", dispatch);
+
+export default function onScroll<K extends Node, T>(
   elements: NodeListOf<K>,
   initInfos: (element: Node) => T,
   handler: (info: T, data: ScrollData) => void
