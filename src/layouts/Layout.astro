@@ -122,22 +122,19 @@ const { default: imageUrl } = await import(`../images/${image}.jpg`);
         :root {
           --gap-section: 96px;
           --gap-section-graphic: 64px;
-          --gap-section-hero: 160px;
+          --gap-section-hero: 96px;
         }
       }
       @media screen and (max-width: 820px) {
         :root {
-          --gap-section: 96px;
-          --gap-section-graphic: 64px;
-          --gap-section-hero: 160px;
           --gap-sides: 32px;
         }
       }
       @media screen and (max-height: 480px) {
         :root {
-          --gap-section: 64px;
-          --gap-section-graphic: 64px;
-          --gap-section-hero: 96px;
+          --gap-section: 48px;
+          --gap-section-graphic: 32px;
+          --gap-section-hero: 64px;
         }
       }
 
@@ -149,7 +146,7 @@ const { default: imageUrl } = await import(`../images/${image}.jpg`);
           rgba(255, 90, 255, 0.1) 89.26%
         );
         --color-gradient-dense: linear-gradient(
-          95.09deg,
+          90deg,
           #ff5aff 6.51%,
           #ff5aff 19.62%,
           #ffbba0 25.99%,
@@ -160,7 +157,13 @@ const { default: imageUrl } = await import(`../images/${image}.jpg`);
           #ff5aff 93.9%
         );
         --color-gradient-simple: linear-gradient(
-          104.29deg,
+          104deg,
+          #ffb039 17.32%,
+          #ff5aff 89.26%,
+          #ffb039 100%
+        );
+        --color-gradient-simple-animated: linear-gradient(
+          90deg,
           #ffb039 17.32%,
           #ff5aff 89.26%,
           #ffb039 100%
@@ -213,7 +216,7 @@ const { default: imageUrl } = await import(`../images/${image}.jpg`);
         font-weight: var(--font-weight-heading);
         line-height: var(--font-line-height-heading);
 
-        background: var(--color-gradient-simple);
+        background: var(--color-gradient-simple-animated);
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
