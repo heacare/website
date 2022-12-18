@@ -23,7 +23,7 @@
     "@astrojs/react": "^1.1.4",
     "@chakra-ui/react": "^2.3.5",
     "@emotion/react": "^11.10.4",
-    "@emotion/styled": "^11.10.4",
+    "@emotion/styled": "^11.10.5",
     "@remirror/core": "^2.0.9",
     "@remirror/react-renderer": "^2.0.9",
     "@types/react": "^18.0.21",
