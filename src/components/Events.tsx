@@ -18,7 +18,7 @@ export default function Events({ lumaId }: Props) {
   if (error) {
     return (
       <div className={styles.innerMessage} title={error}>
-        Unable to load events
+        Unable to load spaces
       </div>
     );
   }
@@ -43,7 +43,7 @@ export default function Events({ lumaId }: Props) {
   if (events.length === 0) {
     return (
       <div className={styles.innerMessage} title={error}>
-        No upcoming events
+        No upcoming spaces
       </div>
     );
   }
