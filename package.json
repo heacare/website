@@ -25,7 +25,7 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.5",
     "@remirror/core": "^2.0.9",
-    "@remirror/react-renderer": "^2.0.9",
+    "@remirror/react-renderer": "^2.0.11",
     "@types/react": "^18.0.27",
     "astro": "^1.6.15",
     "framer-motion": "^6.5.1",
