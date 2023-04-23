@@ -28,7 +28,7 @@
     "@remirror/react-renderer": "^2.0.12",
     "@types/react": "^18.0.27",
     "astro": "^1.6.15",
-    "framer-motion": "^6.5.1",
+    "framer-motion": "^10.12.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
